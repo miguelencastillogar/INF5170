@@ -1,0 +1,466 @@
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f5f7fa;
+    line-height: 1.6;
+}
+
+
+/* BARRA SUPERIOR */
+
+.barra-superior {
+    background-color: #284f72;
+    color: white;
+    font-size: 14px;
+}
+
+
+.barra-contenido {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 8px 20px;
+}
+
+
+.barra-contenido a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.barra-contenido a:hover {
+    text-decoration: underline;
+}
+
+
+/* Destacamos el acceso a la banca */
+.barra-contenido .acceso {
+    margin-left: auto;
+    font-weight: bold;
+}
+
+
+/* ENCABEZADO PRINCIPAL */
+
+.encabezado {
+    background-color: white;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 22px 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+/* Nombre del banco */
+.logo h1 {
+    color: #17466b;
+    font-size: 30px;
+}
+
+
+/* Eslogan */
+.logo p {
+    color: #555;
+    font-size: 13px;
+}
+
+
+/* Categorías */
+.categorias {
+    display: flex;
+    gap: 25px;
+}
+
+
+.categorias a {
+    color: #444;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 15px;
+}
+
+
+.categorias a:hover {
+    color: #087db5;
+}
+
+
+/* MENÚ PRINCIPAL */
+
+.menu-principal {
+    background-color: #08a7df;
+}
+
+
+.menu-principal > ul {
+    max-width: 1200px;
+
+    margin: auto;
+
+    list-style: none;
+
+    display: flex;
+}
+
+
+/* Cada opción del menú */
+.opcion-menu {
+    position: relative;
+}
+
+
+/* Enlaces principales */
+.opcion-menu > a {
+    display: block;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 17px 30px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* Efecto al pasar el cursor */
+.opcion-menu:hover > a {
+    background-color: white;
+    color: #087db5;
+}
+
+
+/* MEGA-MENÚ */
+
+/*
+   El mega-menú permanece oculto inicialmente.
+*/
+.mega-menu {
+    display: none;
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 850px;
+
+    background-color: white;
+
+    padding: 25px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+
+    z-index: 100;
+}
+
+
+/*
+   Al colocar el cursor sobre una opción del menú,
+   mostramos su mega-menú.
+*/
+.opcion-menu:hover .mega-menu {
+    display: flex;
+}
+
+
+/* COLUMNAS DEL MEGA-MENÚ */
+
+.columna-menu {
+    flex: 1;
+
+    padding: 0 25px;
+
+    border-right: 1px solid #ddd;
+}
+
+
+/* Quitamos el borde de la última columna */
+.columna-menu:last-child {
+    border-right: none;
+}
+
+
+/* Título de cada columna */
+.columna-menu h3 {
+    color: #0098d0;
+
+    font-size: 15px;
+
+    margin-bottom: 18px;
+}
+
+
+/* Enlaces del mega-menú */
+.columna-menu a {
+    display: block;
+
+    color: #555;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+
+/* Efecto al pasar el cursor */
+.columna-menu a:hover {
+    color: #0098d0;
+}
+
+
+/* SECCIÓN DE BIENVENIDA */
+
+.bienvenida {
+    background-color: #dcecf7;
+
+    min-height: 300px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px 20px;
+}
+
+
+.bienvenida h2 {
+    color: #17466b;
+
+    font-size: 38px;
+
+    margin-bottom: 15px;
+}
+
+
+.bienvenida p {
+    max-width: 650px;
+
+    margin: 0 auto 25px;
+}
+
+
+/* Botón de la sección de bienvenida */
+.boton {
+    display: inline-block;
+
+    background-color: #17466b;
+
+    color: white;
+
+    padding: 12px 25px;
+
+    text-decoration: none;
+
+    border-radius: 4px;
+}
+
+
+.boton:hover {
+    background-color: #087db5;
+}
+
+
+/* SECCIONES */
+
+.seccion {
+    padding: 60px 20px;
+
+    text-align: center;
+}
+
+
+.seccion h2 {
+    color: #17466b;
+
+    margin-bottom: 30px;
+}
+
+
+/* TARJETAS */
+
+.tarjetas {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+
+.tarjeta {
+    background-color: white;
+
+    width: 280px;
+
+    padding: 25px;
+
+    border-radius: 6px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+
+.tarjeta h3 {
+    color: #087db5;
+
+    margin-bottom: 15px;
+}
+
+
+/* NOSOTROS */
+
+.nosotros {
+    background-color: white;
+}
+
+
+.nosotros p {
+    max-width: 750px;
+
+    margin: auto;
+}
+
+
+/* CONTACTO */
+
+.contacto {
+    background-color: #dcecf7;
+}
+
+
+.contacto p {
+    margin: 8px;
+}
+
+
+/* FOOTER */
+
+.pie-pagina {
+    background-color: #17466b;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+.pie-pagina p {
+    margin: 5px;
+}
+
+
+/* ADAPTACIÓN PARA PANTALLAS PEQUEÑAS */
+
+@media (max-width: 768px) {
+
+    /* La cabecera cambia a una disposición vertical */
+    .encabezado {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    /* Las categorías pueden ocupar varias líneas */
+    .categorias {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    /* El menú principal también se adapta */
+    .menu-principal > ul {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    .opcion-menu > a {
+        padding: 12px 15px;
+    }
+
+
+    /* El mega-menú ocupa prácticamente todo el ancho */
+    .mega-menu {
+        width: 90vw;
+
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        flex-direction: column;
+    }
+
+
+    .columna-menu {
+        border-right: none;
+
+        border-bottom: 1px solid #ddd;
+
+        padding: 15px;
+    }
+
+
+    .columna-menu:last-child {
+        border-bottom: none;
+    }
+
+
+    /* Barra superior */
+    .barra-contenido {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    .barra-contenido .acceso {
+        margin-left: 0;
+    }
+
+}

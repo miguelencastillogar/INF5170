@@ -1,0 +1,2110 @@
+/* ============================================================
+   HOJA DE ESTILOS DEL PORTAFOLIO
+   Lab Lenguaje de Programación III - INF5170
+   ============================================================ */
+
+
+/* VARIABLES DE COLORES */
+
+/*
+   :root permite definir variables CSS que pueden ser
+   reutilizadas en todo el documento.
+
+   Esto evita tener que escribir repetidamente los mismos
+   códigos de colores.
+*/
+:root {
+
+   /* Azul principal utilizado en títulos y elementos importantes */
+   --azul-principal: #0756a6;
+
+   /* Azul oscuro utilizado en textos secundarios */
+   --azul-oscuro: #124b91;
+
+   /* Azul brillante utilizado para detalles y líneas */
+   --azul-brillante: #009fe3;
+
+   /* Azul claro utilizado como fondo */
+   --azul-claro: #eaf5fd;
+
+   /* Fondo azul muy claro */
+   --azul-fondo: #f4faff;
+
+   /* Azul utilizado para algunos bordes */
+   --azul-borde: #d7e8f5;
+
+   /* Color blanco */
+   --blanco: #ffffff;
+
+   /* Color principal de los textos */
+   --texto: #30496b;
+
+   /* Color secundario de los textos */
+   --texto-secundario: #60738f;
+
+   /* Color general de los bordes */
+   --borde: #dce7f1;
+
+   /* Sombra utilizada en tarjetas */
+   --sombra: 0 4px 15px rgba(25, 87, 140, 0.08);
+
+   /* Radio general de las esquinas */
+   --radio: 8px;
+}
+
+/* ********************* */
+/* CONFIGURACIÓN GENERAL */
+/* ********************* */
+
+/*
+   El selector universal * afecta a todos los elementos.
+   Eliminamos los márgenes y rellenos predeterminados
+   que los navegadores aplican automáticamente.
+*/
+* {
+   
+   /* Elimina el margen predeterminado */
+   margin: 0;
+
+   /* Elimina el relleno predeterminado */
+   padding: 0;
+
+   /*
+      Hace que el ancho y alto incluyan el padding
+      y el borde del elemento.
+   */
+   box-sizing: border-box;
+}
+
+/*
+   Configuración del elemento HTML.
+*/
+html {
+
+   /*
+      Permite realizar desplazamientos suaves cuando
+      navegamos hacia diferentes secciones.
+   */
+   scroll-behavior: smooth;
+}
+
+/*
+   Configuración general del cuerpo de la página.
+*/
+body {
+
+   /*
+      Define la familia tipográfica principal.
+   */
+   font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+
+   /* Color general del texto */
+   color: var(--texto);
+
+   /* Fondo blanco */
+   background-color: var(--blanco);
+
+   /*
+      Garantiza que el documento ocupe al menos
+      toda la altura de la pantalla.
+   */
+   min-height: 100vh;
+}
+
+/*
+   Configuración general de los enlaces.
+*/
+a {
+
+   /* Elimina el subrayado tradicional */
+   text-decoration: none;
+
+   /*
+      Hace que el enlace utilice el color
+      definido por su elemento padre.
+   */
+   color: inherit;
+}
+
+/* ENCABEZADO */
+/* ********** */
+
+/*
+   .encabezado representa la parte superior de la página.
+*/
+.encabezado {
+
+   /*
+      Flexbox permite colocar la información académica
+      y la información del estudiante horizontalmente.
+   */
+   display: flex;
+
+   /*
+      Coloca un bloque a la izquierda y otro a la derecha.
+   */
+   justify-content: space-between;
+
+   /* Centra verticalmente los elementos */
+   align-items: center;
+
+   /* Espacio interno */
+   padding: 18px 42px;
+
+   /* Altura mínima */
+   min-height: 122px;
+
+   /* Fondo blanco */
+   background-color: var(--blanco);
+
+   /*
+      Línea azul ubicada en la parte superior
+      de todo el encabezado.
+   */
+   border-top: 4px solid var(--azul-principal);
+
+   /* Línea inferior */
+   border-bottom: 1px solid var(--borde);
+}
+
+/*
+   Contenedor de la información académica.
+*/
+.informacion-asignatura {
+
+    /* Coloca icono y textos horizontalmente */
+    display: flex;
+
+    /* Centra verticalmente */
+    align-items: center;
+
+    /* Espacio entre el icono y el texto */
+    gap: 28px;
+}
+
+/*
+   Área que contiene el icono de computadora.
+*/
+.icono-asignatura {
+
+   /* Ancho del contenedor */
+   width: 80px;
+
+   /* Alto del contenedor */
+   height: 80px;
+
+   /* Centra el icono horizontalmente */
+   display: flex;
+
+   /* Centra el icono verticalmente */
+   align-items: center;
+
+   /* Centra el icono horizontalmente */
+   justify-content: center;
+
+   /* Color del icono */
+   color: var(--azul-principal);
+
+   /* Tamaño del icono */
+   font-size: 54px;
+}
+
+/*
+   Título principal del laboratorio.
+*/
+.datos-asignatura h1 {
+
+   /* Tamaño del texto */
+   font-size: 34px;
+
+   /* Grosor */
+   font-weight: 700;
+
+   /* Color */
+   color: var(--azul-principal);
+
+   /* Espacio inferior */
+   margin-bottom: 2px;
+}
+
+/*
+   Código de la asignatura.
+*/
+.codigo-asignatura {
+
+   /* Tamaño */
+   font-size: 21px;
+
+   /* Color */
+   color: var(--texto);
+
+   /* Espacio inferior */
+   margin-bottom: 3px;
+}
+
+/*
+   Nombre del portafolio.
+*/
+.nombre-portafolio {
+
+   /* Tamaño */
+   font-size: 20px;
+
+   /* Color */
+   color: var(--texto);
+}
+
+/*
+   Información ubicada en el lado derecho.
+*/
+.informacion-estudiante {
+
+   /* Alinea inicialmente el contenido a la derecha */
+   text-align: right;
+}
+
+/*
+   Frase ubicada sobre la tarjeta del estudiante.
+*/
+.frase-encabezado {
+
+   /* Tamaño */
+   font-size: 16px;
+
+   /* Separación respecto a la tarjeta */
+   margin-bottom: 10px;
+
+   /* Color */
+   color: var(--texto);
+}
+
+/*
+   Tarjeta que contiene los datos del estudiante.
+*/
+.tarjeta-estudiante {
+
+   /*
+      Coloca el icono y los datos horizontalmente.
+   */
+   display: flex;
+
+   /* Centra verticalmente los elementos */
+   align-items: center;
+
+   /* Alinea el texto hacia la izquierda */
+   text-align: left;
+
+   /*
+      Degradado azul utilizado en la tarjeta.
+   */
+   background: linear-gradient(
+      90deg,
+      #0799d5,
+      #0694cf
+   );
+
+   /* Texto blanco */
+   color: var(--blanco);
+
+   /* Bordes redondeados */
+   border-radius: 35px;
+
+   /* Espaciado interno */
+   padding: 8px 22px 8px 10px;
+
+   /* Ancho mínimo */
+   min-width: 365px;
+
+   /* Sombra */
+   box-shadow: 0 4px 12px rgba(0, 128, 190, 0.18);
+}
+
+/*
+   Círculo que contiene el icono del estudiante.
+*/
+.icono-estudiante {
+
+   /* Ancho */
+   width: 48px;
+
+   /* Alto */
+   height: 48px;
+
+   /* Fondo azul */
+   background-color: rgba(0, 78, 170, 0.65);
+
+   /* Forma circular */
+   border-radius: 50%;
+
+   /* Centra el icono */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   /* Tamaño del icono */
+   font-size: 22px;
+
+   /* Separación respecto a los datos */
+   margin-right: 13px;
+}
+
+/*
+   Contenedor del nombre y matrícula.
+*/
+.datos-estudiante {
+
+   /* Coloca los datos uno debajo del otro */
+   display: flex;
+
+   flex-direction: column;
+}
+
+/*
+   Nombre del estudiante.
+*/
+.datos-estudiante strong {
+
+   /* Tamaño */
+   font-size: 16px;
+
+   /* Espacio inferior */
+   margin-bottom: 2px;
+}
+
+/*
+   Matrícula.
+*/
+.datos-estudiante span {
+
+   /* Tamaño */
+   font-size: 14px;
+}
+
+/* ******************** */
+/* ESTRUCTURA PRINCIPAL */
+/* ******************** */
+
+/*
+   .estructura divide la pantalla en dos columnas:
+   - menú lateral
+   - contenido principal
+*/
+.estructura {
+
+   /* Utiliza CSS Grid */
+   display: grid;
+
+   /*
+      Primera columna:
+      326px para el menú.
+
+      Segunda columna:
+      ocupa el espacio restante.
+   */
+   grid-template-columns: 326px 1fr;
+
+   /*
+      Calcula la altura disponible debajo
+      del encabezado.
+   */
+   min-height: calc(100vh - 122px);
+}
+
+/* ************ */
+/* MENÚ LATERAL */
+/* ************ */
+
+/*
+   Contenedor principal del menú.
+*/
+.menu-lateral {
+
+   /* Fondo ligeramente azulado */
+   background-color: #f7fbfe;
+
+   /* Línea que separa el menú del contenido */
+   border-right: 1px solid var(--borde);
+
+   /* Permite organizar los elementos verticalmente */
+   display: flex;
+
+   flex-direction: column;
+
+   /* Ocupa toda la altura disponible */
+   min-height: 100%;
+}
+
+/*
+   Encabezado azul del menú.
+*/
+.titulo-menu {
+
+   /*
+      Degradado azul.
+   */
+   background: linear-gradient(
+      90deg,
+      #078dd1,
+      #0074ca
+   );
+
+   /* Texto blanco */
+   color: var(--blanco);
+
+   /* Altura mínima */
+   min-height: 64px;
+
+   /* Flexbox */
+   display: flex;
+
+   /* Centrado vertical */
+   align-items: center;
+
+   /* Separación entre icono y texto */
+   gap: 22px;
+
+   /* Espacio interno */
+   padding: 10px 25px;
+
+   /* Tamaño del texto */
+   font-size: 20px;
+
+   /* Grosor */
+   font-weight: 600;
+
+   /* Sombra */
+   box-shadow: 0 3px 10px rgba(0, 102, 180, 0.25);
+}
+
+/*
+   Icono del encabezado del menú.
+*/
+.titulo-menu i {
+
+   /* Tamaño */
+   font-size: 30px;
+}
+
+/*
+   Contenedor de navegación.
+*/
+.navegacion {
+
+   /* Ocupa todo el ancho disponible */
+   width: 100%;
+}
+
+/*
+   Estilo general de cada opción principal.
+*/
+.opcion-menu {
+
+   /* Ocupa todo el ancho */
+   width: 100%;
+
+   /* Flexbox */
+   display: flex;
+
+   /* Centra verticalmente */
+   align-items: center;
+
+   /* Separación entre elementos */
+   gap: 18px;
+
+   /* Espacio interno */
+   padding: 13px 18px;
+
+   /* Fondo transparente */
+   background-color: transparent;
+
+   /* Borde inferior */
+   border-bottom: 1px solid var(--borde);
+
+   /* Color */
+   color: var(--texto);
+
+   /* Cursor */
+   cursor: pointer;
+
+   /*
+      Hace que el cambio de color ocurra suavemente.
+   */
+   transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+}
+
+/*
+   Iconos principales del menú.
+*/
+.opcion-menu > i:first-child {
+
+   /* Espacio fijo para el icono */
+   width: 28px;
+
+   /* Tamaño */
+   font-size: 23px;
+
+   /* Color */
+   color: #0879c8;
+
+   /* Centrado */
+   text-align: center;
+}
+
+/*
+   Contenedor del texto de cada práctica.
+*/
+.opcion-menu > span {
+
+   /* Ocupa el espacio disponible */
+   flex: 1;
+
+   /* Organiza nombre y descripción verticalmente */
+   display: flex;
+
+   flex-direction: column;
+}
+
+/*
+   Nombre de la práctica.
+*/
+.opcion-menu strong {
+
+   /* Color */
+   color: var(--azul-principal);
+
+   /* Tamaño */
+   font-size: 17px;
+
+   /* Separación */
+   margin-bottom: 2px;
+}
+
+/*
+   Descripción de la práctica.
+*/
+.opcion-menu small {
+
+   /* Tamaño */
+   font-size: 14px;
+
+   /* Altura de línea */
+   line-height: 1.35;
+
+   /* Color */
+   color: var(--texto);
+}
+
+/*
+   Flecha ubicada al final de cada opción.
+*/
+.opcion-menu .flecha {
+
+   /* Tamaño */
+   font-size: 14px;
+
+   /* Color */
+   color: var(--texto);
+}
+
+/*
+   Efecto visual cuando el cursor pasa sobre una opción.
+*/
+.opcion-menu:hover {
+
+   /* Fondo azul claro */
+   background-color: #eaf5fd;
+}
+
+/*
+   El botón utilizado para Práctica 2
+   debe utilizar la misma fuente del sitio.
+*/
+.boton-submenu {
+
+   /* Elimina el borde de enfoque predeterminado */
+   outline: none;
+
+   /* Utiliza la fuente principal */
+   font-family: inherit;
+
+   /* Mantiene el tamaño de fuente */
+   font-size: inherit;
+
+   /* Alinea el texto */
+   text-align: left;
+}
+
+/* ***************************** */
+/* SUBMENÚ ESTÁTICO - PRÁCTICA 2 */
+/* ***************************** */
+
+/*
+   Contenedor de las opciones 2.1 y 2.2.
+
+   Se utiliza una columna para que cada opción
+   aparezca en una línea independiente.
+*/
+.submenu-estatico {
+   
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+
+/*
+   Cada enlace del submenú ocupa una línea completa.
+*/
+.subopcion-menu {
+   
+   display: flex;
+   align-items: center;
+   width: 100%;
+   padding: 8px 15px 8px 45px;
+   color: var(--texto);
+   font-size: 0.90rem;
+   text-decoration: none;
+   border-bottom: 1px solid var(--borde);
+}
+
+/*
+   Iconos de las opciones 2.1 y 2.2.
+*/
+.subopcion-menu i {
+   
+   width: 22px;
+   margin-right: 8px;
+   color: var(--azul-principal);
+}
+
+/*
+   El texto utiliza el espacio disponible.
+*/
+.subopcion-menu span {
+   flex: 1;
+}
+
+/*
+   Efecto visual al pasar el cursor.
+*/
+.subopcion-menu:hover {
+   
+   background-color: var(--azul-claro);
+   color: var(--azul-principal);
+}
+
+/*
+   Quitamos el borde inferior de la última opción.
+*/
+.subopcion-menu:last-child {
+    border-bottom: none;
+}
+
+/* ************************** */
+/* ÁREA MOTIVACIONAL DEL MENÚ */
+/* ************************** */
+
+/* Sección inferior del menú */
+.motivacion-lateral {
+
+   /* flex: 1 permite que esta sección ocupe el espacio sobrante del menú */
+   flex: 1;
+
+   /* Espacio interno */
+   padding: 18px 35px 25px;
+
+   /* Fondo degradado muy suave */
+   background: linear-gradient(
+      180deg,
+      #f8fcff,
+      #eef8fe
+   );
+}
+
+/* Contenedor de las montañas */
+.montanas {
+
+   /* Altura */
+   height: 90px;
+
+   /* Permite posicionar las montañas */
+   position: relative;
+
+   /* Oculta partes que sobresalgan */
+   overflow: hidden;
+
+   /* Separación */
+   margin-bottom: 15px;
+}
+
+/* Configuración general de una montaña */
+.montana {
+
+   /* Permite posicionarla individualmente */
+   position: absolute;
+
+   /* Ubicación inferior */
+   bottom: -20px;
+
+   /*
+      Técnica CSS para crear un triángulo.
+   */
+   width: 0;
+   height: 0;
+
+   /* Bordes transparentes */
+   border-left: 65px solid transparent;
+   border-right: 65px solid transparent;
+
+   /* Borde inferior visible */
+   border-bottom: 95px solid #dceefa;
+}
+
+/* Primera montaña */
+.montana-1 {
+
+    /* Posición horizontal */
+    left: 5px;
+}
+
+/*
+   Segunda montaña.
+*/
+.montana-2 {
+
+   /* Posición */
+   left: 60px;
+
+   /* Ancho */
+   border-left-width: 75px;
+   border-right-width: 75px;
+
+   /* Altura */
+   border-bottom-width: 115px;
+
+   /* Color */
+   border-bottom-color: #c7e2f4;
+}
+
+/* Tercera montaña */
+.montana-3 {
+
+   /* Posición */
+   right: 0;
+
+   /* Ancho */
+   border-left-width: 55px;
+   border-right-width: 55px;
+
+   /* Altura */
+   border-bottom-width: 80px;
+
+   /* Color */
+   border-bottom-color: #e6f3fb;
+}
+
+/* Frase motivacional del menú */
+.frase-lateral {
+
+   /* Tamaño */
+   font-size: 15px;
+
+   /* Altura entre líneas */
+   line-height: 1.7;
+
+   /* Texto inclinado */
+   font-style: italic;
+
+   /* Centrado */
+   text-align: center;
+
+   /* Color */
+   color: var(--texto);
+
+   /* Espacio inferior */
+   margin-bottom: 20px;
+}
+
+/* Línea decorativa creada después de la frase */
+.frase-lateral::after {
+
+   /*
+      content es necesario para crear
+      el elemento pseudo-elemento.
+   */
+   content: "";
+
+   /* Lo convierte en bloque */
+   display: block;
+
+   /* Ancho */
+   width: 46px;
+
+   /* Altura */
+   height: 4px;
+
+   /* Color */
+   background-color: var(--azul-brillante);
+
+   /* Centrado */
+   margin: 16px auto 0;
+
+   /* Bordes redondeados */
+   border-radius: 4px;
+}
+
+/* Cada uno de los elementos: Aprender, Practicar y Construir */
+.item-motivacion {
+
+   /* Flexbox */
+   display: flex;
+
+   /* Centrado vertical */
+   align-items: center;
+
+   /* Separación */
+   gap: 18px;
+
+   /* Espacio inferior */
+   margin-bottom: 15px;
+}
+
+/* Icono de cada elemento */
+.item-motivacion > i {
+
+   /* Ancho fijo */
+   width: 35px;
+
+   /* Tamaño */
+   font-size: 25px;
+
+   /* Color */
+   color: var(--azul-principal);
+
+   /* Centrado */
+   text-align: center;
+}
+
+/* Contenedor del texto */
+.item-motivacion span {
+
+   /* Coloca título y descripción verticalmente */
+   display: flex;
+
+   flex-direction: column;
+}
+
+/* Título del elemento */
+.item-motivacion strong {
+
+   /* Tamaño */
+   font-size: 16px;
+
+   /* Color */
+   color: var(--azul-principal);
+}
+
+/* Descripción del elemento */
+.item-motivacion small {
+
+   /* Tamaño */
+   font-size: 13px;
+
+   /* Color */
+   color: var(--texto);
+}
+
+/* ******************* */
+/* CONTENIDO PRINCIPAL */
+/* ******************* */
+
+/* Área donde se encuentra el contenido principal */
+.contenido-principal {
+
+   /* Fondo blanco */
+   background-color: #ffffff;
+
+   /* Espacio interno */
+   padding: 16px 20px 20px;
+
+   /*
+      Evita que elementos grandes provoquen
+      desbordamiento horizontal.
+   */
+   min-width: 0;
+}
+
+/* BREADCRUMB */
+/* ********** */
+
+/* Barra que muestra que estamos en Inicio */
+.breadcrumb {
+
+   /* Flexbox */
+   display: flex;
+
+   /* Centrado vertical */
+   align-items: center;
+
+   /* Separación entre icono y texto */
+   gap: 20px;
+
+   /* Fondo */
+   background-color: #eef7fd;
+
+   /* Borde */
+   border: 1px solid var(--borde);
+
+   /* Esquinas redondeadas */
+   border-radius: var(--radio);
+
+   /* Espacio interno */
+   padding: 12px 20px;
+
+   /* Separación inferior */
+   margin-bottom: 16px;
+
+   /* Color */
+   color: var(--azul-principal);
+
+   /* Tamaño */
+   font-size: 21px;
+
+   /* Grosor */
+   font-weight: 600;
+}
+
+
+/* Icono del breadcrumb */
+.breadcrumb i {
+
+   /* Tamaño */
+   font-size: 27px;
+}
+
+/* HERO PRINCIPAL */
+/* ************* */
+
+/* Panel principal de presentación */
+.hero {
+
+   /* Permite posicionar elementos internos */
+   position: relative;
+
+   /* Altura mínima */
+   min-height: 365px;
+
+   /*
+      Fondo degradado.
+   */
+   background:
+      linear-gradient(
+         135deg,
+         #f2faff 0%,
+         #ffffff 45%,
+         #edf8ff 100%
+      );
+
+   /* Borde */
+   border: 1px solid var(--borde);
+
+   /* Esquinas */
+   border-radius: var(--radio);
+
+   /*
+      Oculta cualquier elemento que
+      sobresalga del panel.
+   */
+   overflow: hidden;
+
+   /*
+      Grid de tres columnas:
+      1. Texto.
+      2. Ilustración.
+      3. Mensaje.
+   */
+   display: grid;
+
+   grid-template-columns: 45% 40% 15%;
+
+   /* Centra verticalmente */
+   align-items: center;
+
+   /* Espacio interno */
+   padding: 25px;
+}
+
+/*
+   Forma geométrica decorativa.
+*/
+.hero::before {
+
+   /* Elemento vacío */
+   content: "";
+
+   /* Posicionamiento */
+   position: absolute;
+
+   /* Ubicación */
+   top: -100px;
+   right: 12%;
+
+   /* Tamaño */
+   width: 350px;
+   height: 350px;
+
+   /* Rotación */
+   transform: rotate(45deg);
+
+   /* Fondo */
+   background-color: rgba(
+      215,
+      239,
+      253,
+      0.35
+   );
+
+   /*
+      Evita que la figura interfiera
+      con el contenido.
+   */
+   pointer-events: none;
+}
+
+/* Contenedor del contenido textual del hero */
+.contenido-hero {
+
+   /* Permite controlar su posición */
+   position: relative;
+
+   /* Lo coloca por encima de la decoración */
+   z-index: 2;
+
+   /* Espacio izquierdo */
+   padding-left: 10px;
+}
+
+/* Título principal del hero */
+.contenido-hero h2 {
+
+   /* Tamaño */
+   font-size: 48px;
+
+   /* Altura entre líneas */
+   line-height: 0.98;
+
+   /* Color */
+   color: #0c386e;
+
+   /* Grosor */
+   font-weight: 750;
+
+   /* Espacio inferior */
+   margin-bottom: 22px;
+}
+
+/* Destaca la frase "Aplicaciones Web" */
+.contenido-hero h2 span {
+
+   /*
+      Crea un degradado que se aplicará
+      sobre las letras.
+   */
+   background: linear-gradient(
+      90deg,
+      #8c26cc,
+      #0077d8
+   );
+
+   /*
+      Hace que el fondo se recorte
+      siguiendo la forma del texto.
+   */
+   -webkit-background-clip: text;
+   background-clip: text;
+
+   /*
+      Permite que se vea el degradado.
+   */
+   color: transparent;
+}
+
+/* Nombre de la asignatura */
+.subtitulo-hero {
+
+   /* Tamaño */
+   font-size: 14px;
+
+   /* Espaciado entre letras */
+   letter-spacing: 2px;
+
+   /* Grosor */
+   font-weight: 600;
+
+   /* Color */
+   color: var(--azul-oscuro);
+
+   /* Separación */
+   margin-bottom: 5px;
+}
+
+/* Código de la asignatura */
+.codigo-hero {
+
+   /* Tamaño */
+   font-size: 14px;
+
+   /* Espaciado */
+   letter-spacing: 2px;
+
+   /* Grosor */
+   font-weight: 600;
+
+   /* Color */
+   color: var(--azul-oscuro);
+}
+
+/* Caja que contiene la frase motivacional */
+.cita-hero {
+
+   /* Fondo */
+   background-color: rgba(
+      230,
+      243,
+      253,
+      0.8
+   );
+
+   /* Bordes redondeados */
+   border-radius: 12px;
+
+   /* Espacio interno */
+   padding: 20px;
+
+   /* Separación superior */
+   margin-top: 24px;
+
+   /* Ancho máximo */
+   max-width: 430px;
+}
+
+/* Texto de la cita */
+.cita-hero p {
+
+   /* Tamaño */
+   font-size: 16px;
+
+   /* Altura entre líneas */
+   line-height: 1.5;
+
+   /* Color */
+   color: var(--texto);
+}
+
+/* Línea azul decorativa */
+.linea-decorativa {
+
+   /* Ancho */
+   width: 42px;
+
+   /* Alto */
+   height: 4px;
+
+   /* Color */
+   background-color: var(--azul-brillante);
+
+   /* Bordes redondeados */
+   border-radius: 4px;
+
+   /* Separación superior */
+   margin-top: 14px;
+}
+
+/* Ilustración del hero */
+/* ******************** */
+
+/* Contenedor donde construiremos la ilustración */
+.ilustracion-hero {
+
+   /* Permite posicionar elementos internos */
+   position: relative;
+
+   /* Altura */
+   height: 320px;
+
+   /* Flexbox */
+   display: flex;
+
+   /* Centrado vertical */
+   align-items: center;
+
+   /* Centrado horizontal */
+   justify-content: center;
+}
+
+/* Contenedor de la laptop */
+.laptop {
+
+   /* Posición relativa */
+   position: relative;
+
+   /* Ancho */
+   width: 250px;
+
+   /* Alto */
+   height: 175px;
+}
+
+/* Pantalla de la laptop */
+.pantalla {
+
+   /* Ancho completo */
+   width: 100%;
+
+   /* Altura */
+   height: 145px;
+
+   /* Fondo oscuro */
+   background: linear-gradient(
+      135deg,
+      #173a60,
+      #091c34
+   );
+
+   /* Marco de la pantalla */
+   border: 8px solid #8a939d;
+
+   /* Esquinas */
+   border-radius: 9px 9px 4px 4px;
+
+   /* Centra el símbolo de código */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   /* Sombra */
+   box-shadow: 0 8px 15px rgba(
+      0,
+      0,
+      0,
+      0.18
+   );
+}
+
+/* Símbolo de código dentro de la pantalla */
+.pantalla span {
+
+    /* Tamaño */
+    font-size: 50px;
+
+    /* Color blanco */
+    color: #ffffff;
+
+    /* Grosor */
+    font-weight: bold;
+}
+
+/* Base inferior de la laptop */
+.base-laptop {
+
+   /* Ancho */
+   width: 275px;
+
+   /* Alto */
+   height: 14px;
+
+   /* Degradado */
+   background: linear-gradient(
+      90deg,
+      #8b949c,
+      #d9dee2,
+      #8b949c
+   );
+
+   /* Bordes */
+   border-radius: 0 0 18px 18px;
+
+   /* Ajuste horizontal */
+   margin-left: -12px;
+}
+
+/* Estilo general para los bloques HTML, CSS y JS */
+.elemento-tecnologico {
+
+   /* Permite posicionarlos individualmente */
+   position: absolute;
+
+   /* Ancho */
+   width: 65px;
+
+   /* Alto */
+   height: 65px;
+
+   /* Centra el texto */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   /* Bordes */
+   border-radius: 7px;
+
+   /* Texto blanco */
+   color: var(--blanco);
+
+   /* Grosor */
+   font-weight: bold;
+
+   /* Sombra */
+   box-shadow: 0 6px 12px rgba(
+      0,
+      0,
+      0,
+      0.15
+   );
+
+   /* Coloca estos elementos delante de la laptop */
+   z-index: 4;
+}
+
+/* Bloque HTML */
+.elemento-tecnologico.html {
+
+   /* Color naranja */
+   background-color: #f06529;
+
+   /* Posición */
+   top: 40px;
+   left: 12%;
+}
+
+/* Bloque CSS */
+.elemento-tecnologico.css {
+
+   /* Color azul */
+   background-color: #147bd1;
+
+   /* Posición */
+   top: 5px;
+   right: 23%;
+}
+
+/* Bloque JavaScript */
+.elemento-tecnologico.js {
+
+   /* Color amarillo */
+   background-color: #f3b91f;
+
+   /* Texto oscuro */
+   color: #222;
+
+   /* Posición */
+   bottom: 40px;
+   left: 15%;
+}
+
+/* Contenedor de la planta */
+.planta {
+
+   /* Posición absoluta */
+   position: absolute;
+
+   /* Ubicación */
+   right: 7%;
+   bottom: 20px;
+
+   /* Ancho */
+   width: 75px;
+
+   /* Alto */
+   height: 110px;
+
+   /* Se coloca delante de otros elementos */
+   z-index: 4;
+}
+
+/* Configuración general de las hojas */
+.planta span {
+
+   /* Posición absoluta */
+   position: absolute;
+
+   /* Color verde */
+   background-color: #43a85c;
+
+   /* Forma */
+   border-radius: 100% 0 100% 0;
+
+   /* Ancho */
+   width: 35px;
+
+   /* Alto */
+   height: 65px;
+}
+
+/* Primera hoja */
+.planta span:nth-child(1) {
+
+   /* Posición */
+   left: 20px;
+   top: 0;
+
+   /* Rotación */
+   transform: rotate(-30deg);
+}
+
+/* Segunda hoja */
+.planta span:nth-child(2) {
+
+   /* Posición */
+   left: 37px;
+   top: 12px;
+
+   /* Rotación */
+   transform: rotate(30deg);
+}
+
+/* Tercera hoja */
+.planta span:nth-child(3) {
+
+   /* Posición */
+   left: 5px;
+   top: 18px;
+
+   /* Rotación */
+   transform: rotate(-55deg);
+}
+
+/* Maceta */
+.maceta {
+
+   /* Posición */
+   position: absolute;
+
+   /* Ubicación */
+   bottom: 0;
+   left: 16px;
+
+   /* Ancho */
+   width: 52px;
+
+   /* Alto */
+   height: 42px;
+
+   /* Color */
+   background-color: #a86c4d;
+
+   /*
+      clip-path permite darle una forma trapezoidal
+      a la maceta.
+   */
+   clip-path: polygon(
+      8% 0,
+      92% 0,
+      80% 100%,
+      20% 100%
+   );
+}
+
+/* MENSAJE DERECHO DEL HERO */
+/* ************************ */
+
+/*
+   Contenedor de las palabras:
+   IDEAS, CÓDIGO, APRENDIZAJE y RESULTADOS.
+*/
+.mensaje-hero {
+
+   /* Posición */
+   position: relative;
+
+   /* Nivel */
+   z-index: 3;
+
+   /* Organización vertical */
+   display: flex;
+
+   flex-direction: column;
+
+   /* Separación */
+   gap: 5px;
+
+   /* Tamaño */
+   font-size: 16px;
+
+   /* Espaciado */
+   letter-spacing: 1px;
+
+   /* Color */
+   color: var(--azul-oscuro);
+}
+
+/* Línea decorativa del mensaje */
+.mensaje-hero div {
+
+      /* Ancho */
+      width: 40px;
+
+      /* Alto */
+      height: 4px;
+
+      /* Color */
+      background-color: var(--azul-brillante);
+
+      /* Bordes */
+      border-radius: 4px;
+
+      /* Espaciado */
+      margin: 15px 0 12px;
+}
+
+/* Texto "UN MEJOR FUTURO" */
+.mensaje-hero strong {
+
+   /* Tamaño */
+   font-size: 17px;
+
+   /* Altura */
+   line-height: 1.45;
+
+   /* Color */
+   color: var(--azul-principal);
+}
+
+/* SECCIÓN DE BIENVENIDA */
+/* ********************* */
+
+/* Panel de bienvenida */
+.bienvenida {
+
+   /* Fondo */
+   background-color: #ffffff;
+
+   /* Borde */
+   border: 1px solid var(--borde);
+
+   /* Bordes redondeados */
+   border-radius: var(--radio);
+
+   /* Espacio interno */
+   padding: 20px 24px 28px;
+
+   /* Separación respecto al hero */
+   margin-top: 16px;
+
+   /* Sombra */
+   box-shadow: var(--sombra);
+}
+
+/* Encabezado de la sección de bienvenida */
+.titulo-bienvenida {
+
+   /* Flexbox */
+   display: flex;
+
+   /* Centra verticalmente */
+   align-items: center;
+
+   /* Separación */
+   gap: 14px;
+
+   /* Margen inferior */
+   margin-bottom: 10px;
+}
+
+/* Icono de libro */
+.titulo-bienvenida i {
+
+   /* Tamaño */
+   font-size: 27px;
+
+   /* Color */
+   color: var(--azul-principal);
+}
+
+/* Título de bienvenida */
+.titulo-bienvenida h2 {
+
+   /* Tamaño */
+   font-size: 26px;
+
+   /* Color */
+   color: var(--azul-principal);
+}
+
+/* Texto introductorio */
+.bienvenida > p {
+
+   /* Tamaño */
+   font-size: 17px;
+
+   /* Altura */
+   line-height: 1.55;
+
+   /* Color */
+   color: var(--texto);
+}
+
+/* Línea separadora */
+.bienvenida hr {
+
+   /* Elimina el borde predeterminado */
+   border: none;
+
+   /* Crea una línea superior */
+   border-top: 1px solid #e1eaf1;
+
+   /* Separación */
+   margin: 20px 0;
+}
+
+/* PILARES */
+/* ******* */
+
+/* Contenedor de Aprender, Practicar y Construir */
+.pilares {
+
+   /* Utiliza Grid */
+   display: grid;
+
+   /*
+      Crea tres columnas de igual tamaño.
+   */
+   grid-template-columns: repeat(3, 1fr);
+
+   /* Separación entre columnas */
+   gap: 16px;
+}
+
+/* Cada tarjeta individual */
+.pilar {
+
+   /* Flexbox */
+   display: flex;
+
+   /* Centra verticalmente */
+   align-items: center;
+
+   /* Separación */
+   gap: 25px;
+
+   /* Espacio interno */
+   padding: 20px 25px;
+
+   /* Borde */
+   border: 1px solid var(--borde);
+
+   /* Esquinas */
+   border-radius: 9px;
+
+   /* Fondo */
+   background-color: #f7fbff;
+}
+
+/* Icono de cada pilar */
+.pilar > i {
+
+   /* Tamaño */
+   font-size: 40px;
+
+   /* Ancho mínimo */
+   min-width: 50px;
+
+   /* Centrado */
+   text-align: center;
+}
+
+/* Título de cada pilar */
+.pilar h3 {
+
+   /* Tamaño */
+   font-size: 19px;
+
+   /* Espacio inferior */
+   margin-bottom: 5px;
+}
+
+/* Descripción de cada pilar */
+.pilar p {
+
+   /* Tamaño */
+   font-size: 15px;
+
+   /* Altura */
+   line-height: 1.45;
+}
+
+/* Fondo específico para "Aprender" */
+.pilar.aprender {
+
+   background-color: #f1f9ff;
+}
+
+/* Color del icono y título de "Aprender" */
+.pilar.aprender > i,
+.pilar.aprender h3 {
+
+    color: #0867bd;
+}
+
+/* Fondo específico para "Practicar" */
+.pilar.practicar {
+
+    background-color: #f7f2ff;
+}
+
+/* Color del icono y título de "Practicar" */
+.pilar.practicar > i,
+.pilar.practicar h3 {
+
+   color: #7540cf;
+}
+
+/* Fondo específico para "Construir" */
+.pilar.construir {
+
+   background-color: #f0fbf6;
+}
+
+
+/* Color del icono y título de "Construir" */
+.pilar.construir > i,
+.pilar.construir h3 {
+
+   color: #098b61;
+}
+
+/* ************* */
+/* PIE DE PÁGINA */
+/* ************* */
+
+/* Pie de página */
+.pie-pagina {
+
+   /* Línea azul superior */
+   border-top: 3px solid var(--azul-brillante);
+
+   /* Separación superior */
+   margin-top: 25px;
+
+   /* Espacio interno */
+   padding: 13px 24px;
+
+   /* Coloca los textos a los extremos */
+   display: flex;
+
+   justify-content: space-between;
+
+   /* Centra verticalmente */
+   align-items: center;
+
+   /* Fondo */
+   background-color: #f3f9fd;
+
+   /* Color */
+   color: var(--azul-oscuro);
+
+   /* Tamaño */
+   font-size: 14px;
+}
+
+
+/* Frase ubicada en el lado derecho del footer. */
+.pie-pagina p:last-child {
+
+   /* Texto inclinado */
+   font-style: italic;
+
+   /* Alineación */
+   text-align: right;
+}
+
+/* ***************** */
+/* DISEÑO RESPONSIVE */
+/* ***************** */
+
+/*
+   Estas reglas permiten que el sitio se adapte
+   a diferentes tamaños de pantalla.
+*/
+
+/* PANTALLAS MEDIANAS */
+/* ****************** */
+
+@media (max-width: 1200px) {
+
+   /*
+      Reducimos el ancho del menú lateral
+      para dejar más espacio al contenido.
+   */
+   .estructura {
+      
+      grid-template-columns: 285px 1fr;
+   }
+
+   /*
+      Reducimos el tamaño del título principal.
+   */
+   .datos-asignatura h1 {
+
+      font-size: 29px;
+   }
+
+   /*
+      Reducimos el ancho mínimo de la tarjeta
+      del estudiante.
+   */
+   .tarjeta-estudiante {
+
+      min-width: 310px;
+   }
+
+   /*
+      Modificamos la distribución del hero.
+   */
+   .hero {
+
+      grid-template-columns: 48% 37% 15%;
+   }
+
+   /*
+      Reducimos el tamaño del título del hero.
+   */
+   .contenido-hero h2 {
+
+      font-size: 40px;
+   }
+
+}
+
+/* TABLETS */
+/* ======= */
+
+@media (max-width: 950px) {
+
+   /*
+      Reducimos los espacios del encabezado.
+   */
+   .encabezado {
+
+      padding: 18px 25px;
+   }
+
+   /*
+      Ocultamos la frase superior para evitar
+      saturar el encabezado en pantallas pequeñas.
+   */
+   .frase-encabezado {
+
+      display: none;
+   }
+
+   /*
+      El hero utiliza dos columnas.
+   */
+   .hero {
+
+      grid-template-columns: 1fr 1fr;
+   }
+
+   /*
+      Ocultamos el mensaje derecho del hero.
+   */
+   .mensaje-hero {
+
+      display: none;
+   }
+
+   /*
+      Los tres pilares pasan a una sola columna.
+   */
+   .pilares {
+
+      grid-template-columns: 1fr;
+   }
+
+}
+
+/* TABLETS PEQUEÑAS Y TELÉFONOS */
+/* **************************** */
+
+@media (max-width: 768px) {
+
+   /*
+      El encabezado pasa a organizarse verticalmente.
+   */
+   .encabezado {
+
+      flex-direction: column;
+
+      align-items: flex-start;
+
+      gap: 20px;
+   }
+
+   /*
+      La información académica ocupa todo el ancho.
+   */
+   .informacion-asignatura {
+
+      width: 100%;
+   }
+
+   /*
+      La información del estudiante ocupa todo el ancho.
+   */
+   .informacion-estudiante {
+
+      width: 100%;
+
+      text-align: left;
+   }
+
+   /*
+      La tarjeta del estudiante ocupa todo el ancho.
+   */
+   .tarjeta-estudiante {
+
+      min-width: 0;
+
+      width: 100%;
+   }
+
+   /*
+      La estructura principal pasa a una sola columna.
+   */
+   .estructura {
+
+      grid-template-columns: 1fr;
+   }
+
+   /*
+      El área motivacional lateral se oculta
+      para ahorrar espacio en móviles.
+   */
+   .motivacion-lateral {
+
+      display: none;
+   }
+
+   /*
+      El hero pasa a una sola columna.
+   */
+   .hero {
+
+      grid-template-columns: 1fr;
+
+      padding: 30px 20px;
+   }
+
+   /*
+      Eliminamos el espacio izquierdo adicional.
+   */
+   .contenido-hero {
+
+      padding-left: 0;
+   }
+
+   /*
+      Reducimos el título del hero.
+   */
+   .contenido-hero h2 {
+
+      font-size: 38px;
+   }
+
+   /*
+      Separamos la ilustración del contenido textual.
+   */
+   .ilustracion-hero {
+
+      margin-top: 20px;
+   }
+
+   /*
+      El footer pasa a una distribución vertical.
+   */
+   .pie-pagina {
+
+      flex-direction: column;
+
+      gap: 10px;
+
+      text-align: center;
+   }
+
+   /*
+      Centramos también la frase final.
+   */
+   .pie-pagina p:last-child {
+
+      text-align: center;
+   }
+
+}
+
+/* TELÉFONOS PEQUEÑOS */
+/* ****************** */
+
+@media (max-width: 480px) {
+
+   /*
+      Reducimos el tamaño del icono principal.
+   */
+   .icono-asignatura {
+
+      width: 60px;
+      height: 60px;
+      font-size: 42px;
+   }
+
+   /*
+      Reducimos el título del encabezado.
+   */
+   .datos-asignatura h1 {
+
+      font-size: 23px;
+   }
+
+   /*
+      Reducimos el código.
+   */
+   .codigo-asignatura {
+
+      font-size: 17px;
+   }
+
+   /*
+      Reducimos el nombre del portafolio.
+   */
+   .nombre-portafolio {
+
+      font-size: 16px;
+   }
+
+   /*
+      Reducimos el título principal.
+   */
+   .contenido-hero h2 {
+
+      font-size: 32px;
+   }
+
+   /*
+      Reducimos ligeramente los elementos tecnológicos
+      para que puedan entrar en pantallas pequeñas.
+   */
+   .elemento-tecnologico {
+
+      transform: scale(0.8);
+   }
+
+   /*
+      Reducimos la laptop.
+   */
+   .laptop {
+
+      transform: scale(0.8);
+   }
+   
+}

@@ -1,0 +1,799 @@
+<!--  
+  Declara el tipo de documento e indica al navegador que debe interpretar
+  y renderizar la página utilizando el estándar de HTML5. Su función principal es evitar
+  que el navegador entre en "modo de compatibilidad" (quirks mode) y asegurar que la web
+  se visualice correctamente.
+-->
+<!DOCTYPE html>
+
+<!--
+    Elemento raíz del documento HTML.
+    lang="es" indica que el contenido principal está en español.
+-->
+<html lang="es">
+
+    <!--
+        <head> contiene información de configuración del documento
+        que no se muestra directamente dentro de la página.
+    -->
+    <head>
+
+        <!-- Define la codificación de caracteres utilizada por la página -->
+        <meta charset="UTF-8">
+
+        <!--
+            Permite que la página adapte su ancho y escala
+            correctamente en dispositivos móviles.
+        -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--
+            Define el texto que aparecerá en la pestaña del navegador.
+        -->
+        <title>Portafolio - Lab Lenguaje de Programación III</title>
+
+        <!--
+            Carga Font Awesome.
+            Esta biblioteca nos permite utilizar iconos mediante
+            elementos HTML con clases específicas.
+        -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        >
+
+        <!--
+            Conecta este documento HTML con nuestra hoja de estilos.
+            El archivo está dentro de la carpeta css.
+        -->
+        <link rel="stylesheet" href="css/estilos.css">
+
+    </head>
+
+    <!-- <body> contiene todo el contenido visible de la página web. -->
+    <body>
+        
+        <!-- *********************************** -->
+        <!-- ENCABEZADO PRINCIPAL DEL PORTAFOLIO -->
+        <!-- *********************************** -->
+        
+        <!--
+            <header> representa el encabezado principal de la página.
+            Aquí mostraremos la información de la asignatura
+            y los datos del estudiante.
+        -->
+        <header class="encabezado">
+            
+            <!--
+                Contenedor que agrupa la información académica
+                ubicada en el lado izquierdo del encabezado.
+            -->
+            <div class="informacion-asignatura">
+                
+                <!--
+                    Contenedor del icono principal.
+                    Utilizamos Font Awesome para representar
+                    una computadora con código.
+                -->
+                <div class="icono-asignatura">
+                    <!-- Icono de computadora con código -->
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                
+                <!--
+                    Contenedor que agrupa el nombre de la asignatura,
+                    código y nombre del portafolio.
+                -->
+                <div class="datos-asignatura">
+                    
+                    <!-- Nombre de la asignatura -->
+                    <h1>Lab Lenguaje de Programación III</h1>
+                    
+                    <!-- Código de la asignatura -->
+                    <p class="codigo-asignatura">INF5170-1</p>
+                    
+                    <!-- Nombre del sitio web -->
+                    <p class="nombre-portafolio">Portafolio de Prácticas</p>
+                
+                </div>
+
+            </div>
+
+            <!--
+                Contenedor de la información del estudiante.
+                Se encuentra en el lado derecho del encabezado.
+            -->
+            <div class="informacion-estudiante">
+                
+                <!--
+                    Frase que aparece sobre la tarjeta
+                    de identificación del estudiante.
+                -->
+                <p class="frase-encabezado">
+                    Aprender | Practicar | Construir un mejor futuro
+                </p>
+
+                <!--
+                    Tarjeta que contiene el nombre y matrícula
+                    del estudiante.
+                -->
+                <div class="tarjeta-estudiante">
+
+                    <!--
+                        Círculo utilizado como fondo
+                        para el icono del estudiante.
+                    -->
+                    <div class="icono-estudiante">
+                        <!-- Icono de usuario -->
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <!--
+                        Contenedor de los datos personales
+                        que mostraremos en la tarjeta.
+                    -->
+                    <div class="datos-estudiante">
+
+                        <!-- Nombre completo del estudiante -->
+                        <strong>Miguel Enmanuel Castillo Garcia</strong>
+
+
+                        <!-- Matrícula del estudiante -->
+                        <span>DA1734</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ********************************* -->
+        <!-- ESTRUCTURA PRINCIPAL DE LA PÁGINA -->
+        <!-- ********************************* -->
+
+        <!--
+            Este <div> divide visualmente la página en dos grandes áreas:
+
+            1. Menú lateral.
+            2. Contenido principal.
+        -->
+        <div class="estructura">
+
+            <!-- MENÚ LATERAL -->
+            <!-- ************ -->
+
+            <!--
+                <aside> contiene información secundaria o complementaria.
+                En nuestro caso funciona como el menú lateral
+                del portafolio.
+            -->
+            <aside class="menu-lateral">
+
+                <!-- Encabezado visual del menú lateral. -->
+                <div class="titulo-menu">
+
+                    <!-- Icono de reloj utilizado como elemento decorativo -->
+                    <i class="fa-regular fa-clock"></i>
+
+                    <!-- Nombre del menú -->
+                    <span>Prácticas</span>
+
+                </div>
+
+
+                <!--
+                    <nav> representa una sección de navegación.
+                    Aquí estarán los enlaces a nuestras prácticas.
+                -->
+                <nav class="navegacion">
+
+                    <!-- PRÁCTICA 0 -->
+                    <!-- ********** -->
+
+                    <!--
+                        Enlace hacia la Práctica 0.
+                        target="_blank" hace que se abra en una nueva pestaña.
+                        rel="noopener" agrega una medida de seguridad.
+                    -->
+                    <a
+                        href="practicas/practica-0/practica_0_opinion_arquitectura_aplicaciones_web.pdf"
+                        target="_blank"
+                        rel="noopener"
+                        class="opcion-menu"
+                    >
+                        <!-- Icono que representa un documento -->
+                        <i class="fa-solid fa-file-lines"></i>
+
+                        <!-- Información textual de la práctica. -->
+                        <span>
+
+                            <!-- Nombre de la práctica -->
+                            <strong>Práctica 0</strong>
+
+                            <!-- Descripción -->
+                            <small>Arquitectura Web</small>
+
+                        </span>
+
+                        <!-- Flecha que indica que existe un enlace -->
+                        <i class="fa-solid fa-chevron-right flecha"></i>`
+
+                    </a>
+
+                    <!-- PRÁCTICA 1 -->
+                    <!-- ********** -->
+
+                    <!--
+                        Enlace hacia la página de la Práctica 1.
+                    -->
+                    <a
+                        href="practicas/practica-1/practica-1.html"
+                        target="_blank"
+                        rel="noopener"
+                        class="opcion-menu"
+                    >
+                        <!-- Icono de documento -->
+                        <i class="fa-solid fa-file-lines"></i>
+
+                        <!-- Información de la práctica -->
+                        <span>
+
+                            <!-- Nombre -->
+                            <strong>Práctica 1</strong>
+
+
+                            <!-- Descripción -->
+                            <small>Página Web Personal</small>
+
+                        </span>
+
+                        <!-- Flecha -->
+                        <i class="fa-solid fa-chevron-right flecha"></i>
+
+                    </a>
+
+                    <!-- PRÁCTICA 2 -->
+                    <!-- ********** -->
+                    
+                    <div class="grupo-practica">
+
+                        <!-- Encabezado de Práctica 2 -->
+                        <div class="opcion-menu">
+
+                            <!-- Icono de carpeta -->
+                            <i class="fa-solid fa-folder"></i>
+
+                            <!-- Información -->
+                            <span>
+                                
+                                <strong>Práctica 2</strong>
+                                <small>HTML Continuación</small>
+                            
+                            </span>
+
+                        </div>
+
+                        <!-- Práctica 2.1 -->
+                        <!-- ************ -->
+                        
+                        <a
+                            href="practicas/practica-2/practica-2-1/practica-2-1.html"
+                            target="_blank"
+                            rel="noopener"
+                            class="subopcion-menu"
+                        >
+
+                            <!-- Icono -->
+                            <i class="fa-solid fa-user"></i>
+
+                            <!-- Información -->
+                            <span>
+                                
+                                <strong>2.1</strong>
+                                Biografía y horario
+                            
+                            </span>
+
+                        </a>
+
+                        <!-- Práctica 2.2 -->
+                        <!-- ************ -->
+                        
+                        <a
+                            href="practicas/practica-2/practica-2-2/practica-2-2.html"
+                            target="_blank"
+                            rel="noopener"
+                            class="subopcion-menu"
+                        >
+                            <!-- Icono -->
+                            <i class="fa-solid fa-code"></i>
+
+                            <!-- Información -->
+                            <span>
+                                
+                                <strong>2.2</strong>
+                                102 etiquetas HTML
+                            
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                    <!-- PRÁCTICA 3 -->
+                    <!-- ********** -->
+
+                    <!--
+                        Enlace hacia la Práctica 3.
+                    -->
+                    <a
+                        href="practicas/practica-3/practica-3.html"
+                        target="_blank"
+                        rel="noopener"
+                        class="opcion-menu"
+                    >
+
+                        <!-- Icono de monitor -->
+                        <i class="fa-solid fa-display"></i>
+
+                        <!-- Información -->
+                        <span>
+
+                            <!-- Nombre -->
+                            <strong>Práctica 3</strong>
+
+
+                            <!-- Descripción -->
+                            <small>HTML5 y diseño responsive</small>
+
+                        </span>
+
+                        <!-- Flecha -->
+                        <i class="fa-solid fa-chevron-right flecha"></i>
+
+                    </a>
+
+                </nav>
+
+                <!-- ÁREA MOTIVACIONAL DEL MENÚ LATERAL -->
+                <!-- ********************************** -->
+
+                <!--
+                    Esta sección ocupa la parte inferior del menú.
+                    Su propósito es reproducir el área motivacional
+                    observada en el diseño de referencia.
+                -->
+                <div class="motivacion-lateral">
+
+                    <!--
+                        Contenedor de las montañas decorativas.
+                        Las montañas serán creadas mediante CSS.
+                    -->
+                    <div class="montanas">
+
+                        <!-- Primera montaña -->
+                        <span class="montana montana-1"></span>
+
+                        <!-- Segunda montaña -->
+                        <span class="montana montana-2"></span>
+
+                        <!-- Tercera montaña -->
+                        <span class="montana montana-3"></span>
+
+                    </div>
+
+                    <!--
+                        Frase motivacional que aparece debajo
+                        de la ilustración.
+                    -->
+                    <p class="frase-lateral">
+
+                        "La tecnología no solo cambia lo que hacemos,
+                        sino la forma en que aprendemos y construimos
+                        un mejor futuro."
+
+                    </p>
+
+                    <!-- ELEMENTO: APRENDER -->
+                    <!-- ****************** -->
+
+                    <div class="item-motivacion">
+
+                        <!-- Icono de graduación -->
+                        <i class="fa-solid fa-graduation-cap"></i>
+
+                        <!-- Texto -->
+                        <span>
+
+                            <!-- Título -->
+                            <strong>Aprender</strong>
+
+
+                            <!-- Descripción -->
+                            <small>Nuevos conceptos</small>
+
+                        </span>
+
+                    </div>
+
+                    <!-- ELEMENTO: PRACTICAR -->
+                    <!-- ****************** -->
+
+                    <div class="item-motivacion">
+
+                        <!-- Icono de configuración -->
+                        <i class="fa-solid fa-gear"></i>
+
+                        <!-- Texto -->
+                        <span>
+
+                            <!-- Título -->
+                            <strong>Practicar</strong>
+
+                            <!-- Descripción -->
+                            <small>Desarrollar habilidades</small>
+
+                        </span>
+
+                    </div>
+
+                    <!-- ELEMENTO: CONSTRUIR -->
+                    <!-- ****************** -->
+
+                    <div class="item-motivacion">
+
+                        <!-- Icono de gráfico -->
+                        <i class="fa-solid fa-chart-column"></i>
+
+                        <!-- Texto -->
+                        <span>
+
+                            <!-- Título -->
+                            <strong>Construir</strong>
+
+                            <!-- Descripción -->
+                            <small>Un mejor futuro</small>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+            <!-- CONTENIDO PRINCIPAL -->
+            <!-- ******************* -->
+
+            <!-- <main> contiene el contenido principal del sitio -->
+            <main class="contenido-principal">
+
+                <!-- BREADCRUMB -->
+                <!-- ********** -->
+
+                <!--
+                    Este elemento funciona como una referencia
+                    visual de la ubicación actual dentro del sitio.
+                -->
+                <div class="breadcrumb">
+
+                    <!-- Icono de inicio -->
+                    <i class="fa-solid fa-house"></i>
+
+                    <!-- Nombre de la sección actual -->
+                    <span>Inicio</span>
+
+                </div>
+
+                <!-- HERO PRINCIPAL -->
+                <!-- ************** -->
+
+                <!--
+                    <section> agrupa una sección relacionada del contenido.
+
+                    En este caso contiene la presentación principal
+                    del portafolio.
+                -->
+                <section class="hero">
+                    
+                    <!--
+                        Contenedor del contenido textual
+                        ubicado a la izquierda del hero.
+                    -->
+                    <div class="contenido-hero">
+
+                        <!--
+                            Título principal del portafolio.
+                            La palabra "Aplicaciones Web" será destacada
+                            visualmente mediante CSS.
+                        -->
+                        <h2>
+                            Desarrollo de
+                            <span>Aplicaciones Web</span>
+                        </h2>
+
+                        <!-- Nombre de la asignatura -->
+                        <p class="subtitulo-hero">LABORATORIO DE LENGUAJE DE PROGRAMACIÓN III</p>
+
+                        <!-- Código -->
+                        <p class="codigo-hero">INF5170-1</p>
+
+
+                        <!-- Contenedor de la frase motivacional -->
+                        <div class="cita-hero">
+
+                            <!-- Frase -->
+                            <p>
+
+                                "La tecnología no solo cambia lo que hacemos,
+                                sino la forma en que aprendemos y construimos
+                                un mejor futuro."
+
+                            </p>
+
+                        </div>
+
+                        <!-- Línea decorativa -->
+                        <div class="linea-decorativa"></div>
+
+                    </div>
+
+                    <!-- ILUSTRACIÓN DEL HERO -->
+                    <!-- ******************** -->
+
+                    <!--
+                        Esta sección contiene una representación sencilla
+                        de elementos relacionados con el desarrollo web.
+
+                        Los elementos se dibujan mediante HTML y CSS.
+                    -->
+                    <div class="ilustracion-hero">
+
+                        <!-- Elemento visual HTML -->
+                        <div class="elemento-tecnologico html">HTML</div>
+
+
+                        <!-- Elemento visual CSS -->
+                        <div class="elemento-tecnologico css">CSS</div>
+
+
+                        <!-- Elemento visual JavaScript -->
+                        <div class="elemento-tecnologico js">JS</div>
+
+                        <!-- Representación de una computadora portátil -->
+                        <div class="laptop">
+
+                            <!-- Pantalla de la laptop -->
+                            <div class="pantalla">
+
+                                <!-- Símbolo de código -->
+                                <span>
+                                    &lt;/&gt;
+                                </span>
+
+                            </div>
+
+                            <!-- Base de la laptop -->
+                            <div class="base-laptop"></div>
+
+                        </div>
+
+                        <!-- Planta decorativa creada con CSS -->
+                        <div class="planta">
+
+                            <!-- Primera hoja -->
+                            <span></span>
+
+                            <!-- Segunda hoja -->
+                            <span></span>
+
+                            <!-- Tercera hoja -->
+                            <span></span>
+
+                            <!-- Maceta -->
+                            <div class="maceta"></div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- MENSAJE LATERAL DEL HERO -->
+                    <!-- ************************ -->
+
+                    <!--
+                        Este bloque contiene las palabras que aparecen
+                        en el lado derecho de la ilustración.
+                    -->
+                    <div class="mensaje-hero">
+
+                        <!-- Primera palabra -->
+                        <span>IDEAS</span>
+
+                        <!-- Segunda palabra -->
+                        <span>CÓDIGO</span>
+
+                        <!-- Tercera palabra -->
+                        <span>APRENDIZAJE</span>
+
+                        <!-- Cuarta palabra -->
+                        <span>RESULTADOS</span>
+
+                        <!-- Línea decorativa -->
+                        <div></div>
+
+                        <!-- Mensaje final -->
+                        <strong>
+                            UN MEJOR
+                            <br>
+                            FUTURO
+                        </strong>
+                    
+                    </div>
+
+                </section>
+
+                <!-- SECCIÓN DE BIENVENIDA -->
+                <!-- ********************* -->
+
+                <!--
+                    Esta sección explica brevemente el propósito
+                    del portafolio.
+                -->
+                <section class="bienvenida">
+
+                    <!-- Encabezado de la sección -->
+                    <div class="titulo-bienvenida">
+
+                        <!-- Icono de libro -->
+                        <i class="fa-solid fa-book-open"></i>
+
+                        <!-- Título -->
+                        <h2>Bienvenidos a mi portafolio</h2>
+
+                    </div>
+
+                    <!--
+                        Texto introductorio.
+                        Aquí indicamos al visitante dónde encontrar
+                        las diferentes prácticas.
+                    -->
+                    <p>
+                        
+                        En este sitio se encuentran las prácticas realizadas
+                        durante el laboratorio de Lenguaje de Programación III.
+                        <strong>
+                            Selecciona una opción del menú de la izquierda para visualizar cada proyecto.
+                        </strong>
+
+                    </p>
+
+                    <!-- Línea horizontal separadora -->
+                    <hr>
+
+                    <!-- TRES PILARES DEL PORTAFOLIO -->
+                    <!-- *************************** -->
+
+                    <!--
+                        Contenedor de los tres conceptos principales:
+                        Aprender, Practicar y Construir.
+                    -->
+                    <div class="pilares">
+
+                        <!-- APRENDER -->
+                        <!-- ******** -->
+
+                        <!--
+                            <article> representa un contenido independiente.
+                            En este caso representa uno de los pilares
+                            del aprendizaje.
+                        -->
+                        <article class="pilar aprender">
+
+                            <!-- Icono -->
+                            <i class="fa-solid fa-graduation-cap"></i>
+
+                            <!-- Información -->
+                            <div>
+
+                                <!-- Título -->
+                                <h3>Aprender</h3>
+
+                                <!-- Descripción -->
+                                <p>
+                                    Nuevos conceptos
+                                    <br>
+                                    y tecnologías
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <!-- PRACTICAR -->
+                        <!-- ********* -->
+
+                        <article class="pilar practicar">
+
+                            <!-- Icono -->
+                            <i class="fa-solid fa-code"></i>
+
+                            <!-- Información -->
+                            <div>
+                                
+                                <!-- Título -->
+                                <h3>Practicar</h3>
+
+
+                                <!-- Descripción -->
+                                <p>
+                                    Desarrollar habilidades
+                                    <br>
+                                    con proyectos reales
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <!-- CONSTRUIR -->
+                        <!-- ********* -->
+
+                        <article class="pilar construir">
+
+                            <!-- Icono -->
+                            <i class="fa-solid fa-chart-column"></i>
+
+                            <!-- Información -->
+                            <div>
+
+                                <!-- Título -->
+                                <h3>Construir</h3>
+
+                                <!-- Descripción -->
+                                <p>
+                                    Un mejor futuro
+                                    <br>
+                                    con disciplina y constancia
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <!-- ************* -->
+                <!-- PIE DE PÁGINA -->
+                <!-- ************* -->
+
+                <!-- <footer> representa el pie de página del sitio -->
+                <footer class="pie-pagina">
+
+                    <!-- Información académica -->
+                    <p>
+                        © 2026 - Lab Lenguaje de Programación III
+                        &nbsp;|&nbsp;
+                        Miguel E. Castillo Garcia (DA1734)
+                    </p>
+
+                    <!-- Frase final -->
+                    <p>
+                        "Con conocimiento y esfuerzo, todo es posible"
+                    </p>
+
+                </footer>
+            
+            </main>
+
+        </div>
+
+        <!-- Conecta el archivo JavaScript para el funcionamiento del sitio -->
+        <script src="js/app.js"></script>
+    
+    </body>
+
+</html>
