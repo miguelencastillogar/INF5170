@@ -224,34 +224,22 @@ a {
    color: var(--azul-principal);
 
    /* Espacio inferior */
-   margin-bottom: 2px;
-}
-
-/*
-   Código de la asignatura.
-*/
-.codigo-asignatura {
-
-   /* Tamaño */
-   font-size: 21px;
-
-   /* Color */
-   color: var(--texto);
-
-   /* Espacio inferior */
-   margin-bottom: 3px;
+   margin-bottom: 7px;
 }
 
 /*
    Nombre del portafolio.
 */
-.nombre-portafolio {
+.nombre-docentes {
 
    /* Tamaño */
    font-size: 20px;
 
    /* Color */
-   color: var(--texto);
+   color: var(--azul-principal);
+
+   /* Grosor */
+   font-weight: 500;
 }
 
 /*
@@ -2077,7 +2065,7 @@ a {
    /*
       Reducimos el nombre del portafolio.
    */
-   .nombre-portafolio {
+   .nombre-docentes {
 
       font-size: 16px;
    }
