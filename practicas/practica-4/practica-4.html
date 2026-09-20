@@ -1,0 +1,275 @@
+<!-- Le indica al navegador que este documento utiliza HTML5 -->
+<!DOCTYPE html>
+
+<!--
+    <html> es el elemento raíz del documento HTML.
+    El parametro lang="es" indica que el idioma principal del documento es español.
+-->
+<html lang="es">
+    
+    <!-- 
+        El <head> contiene información que el navegador necesita para interpretar
+        correctamente la página.
+    -->
+    <head>
+        
+        <!-- 
+            Define la codificación de caracteres utilizada por la página.
+
+            Permite utilizar caracteres acentuados. Ejemplo á, é, í, ó, ú.
+        -->
+        <meta charset="UTF-8">
+        
+        <!--
+            Permite que la página adapte su ancho y escala
+            correctamente en dispositivos móviles. Parametros:
+
+            width=device-width: establece el ancho de la página igual al ancho de la pantalla del dispositivo.
+            initial-scale=1.0: establece el nivel de zoom inicial al cargar la página.
+        -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Define el texto que aparecerá en la pestaña del navegador -->
+        <title>Pr&aacute;ctica 4 - Men&uacute; Din&aacute;mico</title>
+
+        <!--
+            Conecta este documento HTML con nuestra hoja de estilos.
+            El archivo está dentro de la carpeta css.
+        -->
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+
+    <!-- <body> contiene todo el contenido visible de la página web. -->
+    <body>
+
+        <!-- <header> representa el encabezado principal de la página -->
+        <header>
+            <h1>AMVERFU</h1>
+            <p>Aplicación web con menú dinámico</p>
+        </header>
+
+        <!-- <nav> representa una sección de navegación -->
+        <nav>
+            <!-- 
+                Lista no ordenada de elementos del menú principal.
+
+                Los elementos del menú se generarán dinámicamente mediante JavaScript.
+
+                El id "menu-principal" permite identificar de manera única ese elemento y
+                Posteriormente JavaScript podrá buscar exactamente ese elemento para dinamicamente
+                agregar los elementos del menú desde el archivo JSON.
+            -->
+            <ul id="menu-principal">
+            </ul>
+        </nav>
+
+         <!-- <main> contiene el contenido principal del sitio -->
+        <main>
+
+            <!-- SECCIÓN INICIO -->
+            <!-- ************** -->
+
+            <section id="inicio">
+
+                <h2>Bienvenido a AMVERFU</h2>
+
+                <p>
+                    AMVERFU es una aplicación web desarrollada como
+                    ejercicio académico para demostrar la creación
+                    de un menú dinámico utilizando JavaScript y JSON.
+                </p>
+
+                <p>
+                    Las opciones del menú no están escritas directamente
+                    en el código HTML. Son obtenidas desde una estructura
+                    de datos JSON.
+                </p>
+
+            </section>
+
+            <!-- SECCIÓN PRODUCTOS -->
+            <!-- ***************** -->
+
+            <section id="productos">
+
+                <h2>Productos</h2>
+
+                <p>
+                    En esta sección se pueden consultar los productos
+                    disponibles en AMVERFU.
+                </p>
+
+                <h3 id="categorias">Categorías</h3>
+
+                <p>
+                    Los productos pueden organizarse en diferentes
+                    categorías para facilitar su consulta.
+                </p>
+
+                <h3 id="ofertas">Ofertas</h3>
+
+                <p>
+                    Aquí se pueden presentar productos que tengan
+                    descuentos u ofertas especiales.
+                </p>
+
+                <h3 id="novedades">Novedades</h3>
+
+                <p>
+                    En esta sección se pueden mostrar nuevos productos
+                    incorporados recientemente.
+                </p>
+
+            </section>
+
+            <!-- SECCIÓN SERVICIOS -->
+            <!-- ***************** -->
+
+            <section id="servicios">
+
+                <h2>Servicios</h2>
+
+                <p>
+                    AMVERFU puede ofrecer diferentes servicios
+                    relacionados con las necesidades de sus clientes.
+                </p>
+
+                <h3 id="consultoria">Consultoría</h3>
+
+                <p>
+                    Servicio orientado a brindar orientación y
+                    asesoramiento.
+                </p>
+
+                <h3 id="soporte">Soporte</h3>
+
+                <p>
+                    Servicio destinado a brindar asistencia a los
+                    usuarios.
+                </p>
+
+            </section>
+
+            <!-- SECCIÓN VENTAS -->
+            <!-- ************** -->
+
+            <section id="ventas">
+
+                <h2>Ventas</h2>
+
+                <p>
+                    Esta sección representa el área destinada a la
+                    gestión de las ventas realizadas en AMVERFU.
+                </p>
+
+            </section>
+
+            <!-- SECCIÓN REPORTES -->
+            <!-- **************** -->
+
+            <section id="reportes">
+
+                <h2>Reportes</h2>
+
+                <p>
+                    En esta sección se pueden consultar diferentes
+                    informes relacionados con la información de la
+                    aplicación.
+                </p>
+
+            </section>
+
+            <!-- SECCIÓN CONTACTO -->
+            <!-- **************** -->
+
+            <section id="contacto">
+
+                <h2>Contacto</h2>
+
+                <p>
+                    Esta sección representa el espacio destinado a
+                    la información de contacto de AMVERFU.
+                </p>
+
+            </section>
+
+            <!-- SECCIÓN CONCEPTOS -->
+            <!-- ***************** -->
+
+            <section id="conceptos">
+
+                <h2>Conceptos relacionados</h2>
+
+                <p>
+                    En esta práctica se utilizan conceptos relacionados
+                    con el intercambio de información entre aplicaciones
+                    y servicios web.
+                </p>
+
+                <h3>API</h3>
+
+                <p>
+                    Una API permite que diferentes aplicaciones o sistemas
+                    puedan comunicarse e intercambiar información siguiendo
+                    determinadas reglas.
+                </p>
+
+                <h3>REST</h3>
+
+                <p>
+                    REST es un estilo utilizado para diseñar servicios web
+                    que permiten acceder e intercambiar recursos mediante
+                    protocolos como HTTP.
+                </p>
+
+                <h3>SOAP</h3>
+
+                <p>
+                    SOAP es un protocolo utilizado para el intercambio de
+                    mensajes estructurados entre aplicaciones y utiliza
+                    principalmente XML.
+                </p>
+
+                <h3>JSON</h3>
+
+                <p>
+                    JSON es un formato ligero utilizado para representar
+                    e intercambiar datos. En esta práctica se utiliza para
+                    almacenar las opciones del menú dinámico.
+                </p>
+
+                <h3>XML</h3>
+
+                <p>
+                    XML es un formato que permite representar información
+                    estructurada mediante etiquetas.
+                </p>
+
+                <h3>GraphQL</h3>
+
+                <p>
+                    GraphQL es una tecnología para consultar APIs que
+                    permite solicitar los datos específicos que necesita
+                    una aplicación.
+                </p>
+
+            </section>
+
+        </main>
+
+        <!-- 
+            Conecta el archivo JavaScript para el funcionamiento del sitio
+
+            ¿Por qué al final del <body>?
+
+            Colocar el script al final del <body> asegura que todo el contenido HTML
+            se haya cargado antes de que se ejecute el JavaScript, evitando errores
+            relacionados con elementos que aún no existen en el DOM.
+        -->
+        <script src="js/script.js"></script>
+
+    </body>
+    <!-- Fin del contenido visible de la página web -->
+
+</html>

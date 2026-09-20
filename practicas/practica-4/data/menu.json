@@ -1,0 +1,50 @@
+[
+    {
+        "nombre": "Inicio",
+        "enlace": "#inicio"
+    },
+    {
+        "nombre": "Productos",
+        "enlace": "#productos",
+        "submenu": [
+            {
+                "nombre": "Categorías",
+                "enlace": "#categorias"
+            },
+            {
+                "nombre": "Ofertas",
+                "enlace": "#ofertas"
+            },
+            {
+                "nombre": "Novedades",
+                "enlace": "#novedades"
+            }
+        ]
+    },
+    {
+        "nombre": "Servicios",
+        "enlace": "#servicios",
+        "submenu": [
+            {
+                "nombre": "Consultoría",
+                "enlace": "#consultoria"
+            },
+            {
+                "nombre": "Soporte",
+                "enlace": "#soporte"
+            }
+        ]
+    },
+    {
+        "nombre": "Ventas",
+        "enlace": "#ventas"
+    },
+    {
+        "nombre": "Reportes",
+        "enlace": "#reportes"
+    },
+    {
+        "nombre": "Contacto",
+        "enlace": "#contacto"
+    }
+]

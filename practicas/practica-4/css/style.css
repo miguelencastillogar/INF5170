@@ -1,0 +1,212 @@
+/*
+ * ===================================================
+ * PRÁCTICA 4 - MENÚ DINÁMICO CON ESTRUCTURA DE DATOS|
+ * Aplicación: AMVERFU                               |
+ * Archivo: style.css                                |
+ * ===================================================
+ *                                                   |
+ * HTML        → estructura                          |
+ * CSS         → presentación                        |
+ * JavaScript  → comportamiento                      |
+ * JSON        → datos                               |
+ * ===================================================
+ */
+
+/*
+ * -------------------------
+ * 1. CONFIGURACIÓN GENERAL|
+ * -------------------------
+ *
+ * El selector universal (*) selecciona todos los elementos
+ * HTML de la página.
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+ * -----------------------------------------
+ * 2. CONFIGURACIÓN DEL CUERPO DE LA PÁGINA|
+ * -----------------------------------------
+ */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/*
+ * -------------------------
+ * 3. ENCABEZADO DE AMVERFU|
+ * -------------------------
+ */
+header {
+    padding: 20px;
+    text-align: center;
+    background-color: #222;
+    color: white;
+}
+
+/*
+ * -----------------------
+ * 4. BARRA DE NAVEGACIÓN|
+ * -----------------------
+ */
+nav {
+    background-color: #333;
+}
+
+/*
+ * ------------------
+ * 5. MENÚ PRINCIPAL|
+ * ------------------
+ *
+ * #menu-principal selecciona el elemento que tiene:
+ *
+ * id="menu-principal"
+ *
+ * list-style: none elimina las viñetas.
+ *
+ * display: flex permite organizar los elementos
+ * horizontalmente.
+ */
+#menu-principal {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+/*
+ * ----------------------------------
+ * 6. ELEMENTOS PRINCIPALES DEL MENÚ|
+ * ----------------------------------
+ *
+ * El símbolo ">" selecciona solamente los <li> que son
+ * hijos directos de #menu-principal.
+ */
+#menu-principal > li {
+    position: relative;
+}
+
+/*
+ * --------------------
+ * 7. ENLACES DEL MENÚ|
+ * --------------------
+ */
+#menu-principal a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+/*
+ * -----------------------------------------------------------
+ * 8. EFECTO AL PASAR EL MOUSE SOBRE LAS OPCIONES PRINCIPALES|
+ * -----------------------------------------------------------
+ */
+#menu-principal > li > a:hover {
+    background-color: #555;
+}
+
+/*
+ * -----------
+ * 9. SUBMENÚ|
+ * -----------
+ *
+ * Inicialmente los submenús estarán ocultos.
+ */
+#menu-principal li ul {
+    display: none;
+    position: absolute;
+    min-width: 180px;
+    list-style: none;
+    background-color: #333;
+}
+
+/*
+ * -----------------------
+ * 10. MOSTRAR EL SUBMENÚ|
+ * -----------------------
+ *
+ * Cuando el usuario coloca el mouse sobre una opción
+ * principal que contiene un submenú, este se muestra.
+ */
+#menu-principal > li:hover > ul {
+    display: block;
+}
+
+/*
+ * --------------------------
+ * 11. ELEMENTOS DEL SUBMENÚ|
+ * --------------------------
+ */
+#menu-principal li ul li {
+    width: 180px;
+}
+
+/*
+ * ------------------------
+ * 12. ENLACES DEL SUBMENÚ|
+ * ------------------------
+ */
+#menu-principal li ul li a {
+    padding: 12px 15px;
+}
+
+/*
+ * ------------------------
+ * 13. CONTENIDO PRINCIPAL|
+ * ------------------------
+ */
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+}
+
+/*
+ * ----------------------------
+ * 14. SECCIONES DEL CONTENIDO|
+ * ----------------------------
+ *
+ * Cada sección representa uno de los destinos principales
+ * definidos en menu.json.
+ */
+main section {
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+}
+
+/*
+ * -----------------------------
+ * 15. TÍTULOS DE LAS SECCIONES|
+ * -----------------------------
+ */
+main section h2 {
+    margin-bottom: 15px;
+}
+
+/*
+ * ---------------
+ * 16. SUBTÍTULOS|
+ * ---------------
+ */
+main section h3 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/*
+ * -------------
+ * 17. PÁRRAFOS|
+ * -------------
+ */
+main section p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
