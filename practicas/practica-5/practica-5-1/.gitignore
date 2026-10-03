@@ -1,0 +1,9 @@
+
+# Playwright
+node_modules/
+/test-results/
+# Profesora Marlenis Concepción, comente esta linea para que se incluya el reporte HTML de Playwright en el control de versiones y asi poder revisarlo posteriormente.
+# /playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
