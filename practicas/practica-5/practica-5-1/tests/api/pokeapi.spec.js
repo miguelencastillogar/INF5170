@@ -1,9 +1,9 @@
 // Importamos las funciones test y expect de Playwright.
 import { test, expect } from '@playwright/test';
 
-// ============================================================
-// API-01 - CONSULTAR POKÉMON EXISTENTE
-// ============================================================
+// =====================================
+// API-01 - CONSULTAR POKÉMON EXISTENTE|
+// =====================================
 
 test('API-01 - Consultar Pikachu en PokéAPI', async ({ request }) => {
 
