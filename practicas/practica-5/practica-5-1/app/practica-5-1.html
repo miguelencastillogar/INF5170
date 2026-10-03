@@ -1,0 +1,218 @@
+<!-- Le indica al navegador que este documento utiliza HTML5 -->
+<!DOCTYPE html>
+<!--
+    Es el elemento raíz del documento HTML.
+    El parametro lang="es" indica que el idioma principal del documento es español.
+-->
+<html lang="es">
+
+    <head>
+
+        <!--
+            Define la codificación de caracteres utilizada
+            por el documento.
+
+            UTF-8 permite utilizar correctamente:
+            - Tildes
+            - Ñ
+            - Caracteres especiales
+        -->
+        <meta charset="UTF-8">
+
+        <!--
+            Permite que la página se adapte correctamente
+            a diferentes tamaños de pantalla.
+
+            Es especialmente importante para dispositivos móviles.
+        -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--
+            Título que aparecerá en la pestaña del navegador.
+
+            También será utilizado posteriormente
+            en una de nuestras pruebas automatizadas de UI.
+        -->
+        <title>AMVERFU - Explorador Pokémon</title>
+
+        <!--
+            Vincula el archivo HTML con nuestra hoja de estilos CSS.
+
+            La ruta indica que:
+            - Estamos en la carpeta app/
+            - CSS está dentro de app/css/
+            - El archivo se llama estilos.css
+        -->
+        <link rel="stylesheet" href="css/estilos.css">
+
+    </head>
+
+    <body>
+
+        <!-- ENCABEZADO DE LA APLICACIÓN -->
+
+        <header>
+
+            <!-- Nombre de nuestra aplicación -->
+            <h1>AMVERFU</h1>
+
+            <!-- Descripción breve de la aplicación -->
+            <p>Explorador Pokémon</p>
+
+        </header>
+
+        <!-- CONTENIDO PRINCIPAL -->
+
+        <main>
+
+            <!--
+                Esta sección contiene toda la funcionalidad
+                principal de nuestra aplicación.
+            -->
+            <section>
+
+                <!-- Título principal de la funcionalidad -->
+                <h2>Buscar un Pokémon</h2>
+
+                <!-- Descripción de lo que puede hacer el usuario -->
+                <p>
+                    Escribe el nombre de un Pokémon para consultar
+                    su información.
+                </p>
+
+                <!-- FORMULARIO DE BÚSQUEDA -->
+
+                <form id="formulario-busqueda">
+
+                    <!--
+                        LABEL
+
+                        La etiqueta identifica el campo de entrada.
+
+                        El atributo "for" debe coincidir con el
+                        atributo "id" del input.
+
+                        Esto también facilita que las herramientas
+                        de accesibilidad y Playwright puedan
+                        identificar correctamente el campo.
+                    -->
+                    <label for="pokemon">Nombre del Pokémon:</label>
+
+                    <!--
+                        INPUT
+
+                        Campo donde el usuario escribirá
+                        el nombre del Pokémon.
+
+                        type="text"
+                        Indica que es un campo de texto.
+
+                        id="pokemon"
+                        Identifica el elemento dentro del HTML.
+
+                        name="pokemon"
+                        Define el nombre del campo.
+
+                        placeholder
+                        Muestra un ejemplo antes de escribir.
+
+                        required
+                        Indica que el campo no debe enviarse vacío.
+                    -->
+                    <input type="text" id="pokemon" name="pokemon" placeholder="Ejemplo: pikachu" required>
+
+                    <!-- Contenedor de los botones del formulario -->
+                    <div class="acciones">
+
+                        <!--
+                            BOTÓN BUSCAR
+
+                            type="submit"
+                            Indica que este botón enviará
+                            el formulario.
+
+                            Posteriormente JavaScript detectará
+                            este evento y realizará la consulta
+                            a PokéAPI.
+                        -->
+                        <button type="submit" id="boton-buscar">Buscar</button>
+
+                        <!--
+                            BOTÓN LIMPIAR
+
+                            type="reset"
+                            Utiliza el comportamiento nativo
+                            de HTML para restablecer los campos
+                            del formulario.
+
+                            JavaScript también se encargará de
+                            limpiar el área de resultados.
+                        -->
+                        <button type="reset" id="boton-limpiar">Limpiar</button>
+                    
+                    </div>
+
+                </form>
+
+                <!-- ÁREA DE RESULTADOS -->
+
+                <div id="resultado">
+
+                    <!--
+                        Este mensaje aparecerá inicialmente.
+
+                        Posteriormente JavaScript lo reemplazará
+                        por la información obtenida desde PokéAPI.
+                    -->
+                    <p id="mensaje">
+                        Escribe el nombre de un Pokémon y presiona
+                        "Buscar".
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- PIE DE PÁGINA -->
+
+        <footer>
+
+            <!-- Identificación de la práctica -->
+            <p>
+                Práctica 5.1 - Pruebas Automatizadas de UI y API
+            </p>
+
+
+            <!-- Identificación de la asignatura -->
+            <p>
+                INF5170 - Laboratorio de Lenguaje de Programación III
+            </p>
+
+        </footer>
+
+        <!-- JAVASCRIPT -->
+
+        <!--
+            Vinculamos nuestro archivo JavaScript.
+
+            Este archivo será responsable de:
+
+            1. Detectar el envío del formulario.
+            2. Obtener el nombre del Pokémon.
+            3. Consultar PokéAPI.
+            4. Procesar la respuesta JSON.
+            5. Mostrar los resultados.
+            6. Manejar errores.
+            7. Limpiar el resultado cuando corresponda.
+
+            La etiqueta <script> se coloca al final del body
+            para que los elementos HTML ya estén disponibles
+            cuando JavaScript sea ejecutado.
+        -->
+        <script src="js/app.js"></script>
+
+    </body>
+
+</html>
