@@ -16,7 +16,7 @@ test('UI-01 - AMVERFU carga correctamente', async ({ page }) => {
     //
     // Como nuestro archivo HTML tiene un nombre específico,
     // indicamos la ruta completa del archivo.
-    await page.goto('/practica-5-1.html');
+    await page.goto('/practica-5.html');
 
     // Verificamos que el título de la página sea el esperado.
     //
@@ -73,7 +73,7 @@ test('UI-01 - AMVERFU carga correctamente', async ({ page }) => {
 test('UI-02 - Buscar un Pokémon', async ({ page }) => {
 
     // Abrimos nuestra aplicación.
-    await page.goto('/practica-5-1.html');
+    await page.goto('/practica-5.html');
 
     // Localizamos el campo de texto mediante su etiqueta.
     const campoPokemon = page.getByLabel('Nombre del Pokémon:');
@@ -123,7 +123,7 @@ test('UI-02 - Buscar un Pokémon', async ({ page }) => {
 test('UI-03 - Limpiar formulario y resultado', async ({ page }) => {
 
     // Abrimos nuestra aplicación.
-    await page.goto('/practica-5-1.html');
+    await page.goto('/practica-5.html');
 
     // Localizamos el campo donde se escribe
     // el nombre del Pokémon.

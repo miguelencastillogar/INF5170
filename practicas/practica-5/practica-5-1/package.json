@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "http-server ./app -p 3000"
+    "start": "http-server ../amverfu -p 3000"
   },
   "keywords": [],
   "author": "",

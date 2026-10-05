@@ -1,94 +1,41 @@
-# Práctica 5.1 - Pruebas Automatizadas de UI y API
+# Práctica 5 - Pruebas Modernas para Aplicaciones Web y APIs
 
 ## INF5170 - Laboratorio de Lenguaje de Programación III
 
----
+### Descripción
 
-## 1. Descripción
+En esta práctica se trabajan diferentes estrategias y herramientas modernas
+para realizar pruebas sobre aplicaciones web y APIs.
 
-En esta práctica se implementaron pruebas automatizadas para una aplicación web
-desarrollada con HTML, CSS y JavaScript.
+Como aplicación común para las tres entregas se utiliza:
 
-La aplicación utilizada se denomina **AMVERFU - Explorador Pokémon** y permite
-consultar información de un Pokémon mediante la API pública PokéAPI.
+**AMVERFU - Explorador Pokémon**
 
-Para la automatización de las pruebas se utilizó **Playwright**.
+La práctica se divide en tres actividades:
 
----
+- **Práctica 5.1:** Pruebas Automatizadas de UI y API con Playwright.
+- **Práctica 5.2:** Pruebas BDD con Gherkin.
+- **Práctica 5.3:** Pruebas de Performance.
 
-## 2. Objetivo
-
-El objetivo de esta práctica es aplicar pruebas automatizadas sobre una
-aplicación web, verificando tanto el comportamiento de su interfaz de usuario
-(UI) como la comunicación con una API REST.
-
-Se implementaron:
-
-- 3 pruebas automatizadas de UI.
-- 2 pruebas automatizadas de API.
-- Ejecución de las pruebas UI en Chromium, Firefox y WebKit.
-- Validación de códigos de respuesta HTTP.
-- Validación del contenido JSON recibido desde la API.
+Cada práctica cuenta con su propia documentación y evidencias.
 
 ---
 
-## 3. Tecnologías utilizadas
+## 1. Aplicación utilizada
 
-- HTML5
-- CSS3
-- JavaScript
-- Node.js
-- npm
-- Playwright
-- http-server
-- PokéAPI
-- Git / GitHub
+### AMVERFU - Explorador Pokémon
 
----
+AMVERFU es una aplicación web que permite consultar información
+de diferentes Pokémon mediante su nombre.
 
-## 4. Aplicación AMVERFU
+La aplicación utiliza la **PokéAPI** como fuente de información.
 
-La aplicación permite introducir el nombre de un Pokémon y consultar
-información sobre él.
-
-La información presentada incluye:
-
-- Nombre.
-- ID.
-- Altura.
-- Peso.
-
-También dispone de un botón **Limpiar**, que permite restaurar el formulario
-y el mensaje inicial.
-
----
-
-## 5. Estructura del proyecto
+Su estructura se encuentra en:
 
 ```text
-practica-5-1/
-│
-├── app/
-│   ├── css/
-│   │   └── estilos.css
-│   │
-│   ├── js/
-│   │   └── app.js
-│   │
-│   └── practica-5-1.html
-│
-├── tests/
-│   ├── api/
-│   │   └── pokeapi.spec.js
-│   │
-│   └── ui/
-│       └── amverfu.spec.js
-│
-├── playwright-report/
-│   └── index.html
-│
-├── .gitignore
-├── package.json
-├── package-lock.json
-├── playwright.config.js
-└── README.md
+amverfu/
+├── css/
+│   └── estilos.css
+├── js/
+│   └── app.js
+└── practica-5.html
