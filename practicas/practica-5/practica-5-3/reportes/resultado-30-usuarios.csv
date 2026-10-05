@@ -1,0 +1,3 @@
+Label,# Samples,Average,Min,Max,Std. Dev.,Error %,Throughput,Received KB/sec,Sent KB/sec,Avg. Bytes
+GET - Pokémon Pikachu,150,100,52,277,70.12,0.000%,5.09286,1501.68,0.65,301936.5
+TOTAL,150,100,52,277,70.12,0.000%,5.09286,1501.68,0.65,301936.5
