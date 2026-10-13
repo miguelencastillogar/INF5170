@@ -1,0 +1,151 @@
+<!--  
+  Declara el tipo de documento e indica al navegador que debe interpretar
+  y renderizar la página utilizando el estándar de HTML5. Su función principal es evitar
+  que el navegador entre en "modo de compatibilidad" (quirks mode) y asegurar que la web
+  se visualice correctamente.
+-->
+<!DOCTYPE html>
+
+<!--
+    Elemento raíz del documento HTML.
+    lang="es" indica que el contenido principal está en español.
+-->
+<html lang="es">
+    
+    <head>
+        <!-- Configuración básica del documento -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Título mostrado en la pestaña del navegador -->
+        <title>AMVERFU | Gestión de Productos</title>
+
+        <!-- Hoja de estilos externa -->
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- Biblioteca oficial de Supabase para JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+
+        <!-- Código JavaScript de nuestra aplicación -->
+        <!-- El atributo defer permite que el navegador termine de analizar el HTML antes de ejecutar nuestro JavaScript. -->
+        <script src="js/app.js" defer></script>
+    </head>
+    
+    <body>
+        
+        <!-- Encabezado principal -->
+        <header class="encabezado">
+            <div class="contenedor">
+                <h1>AMVERFU</h1>
+                <p>Gestión de Productos</p>
+            </div>
+        </header>
+
+        <!-- Contenido principal -->
+        <main class="contenedor">
+
+            <!-- Sección del formulario -->
+            <section class="panel" aria-labelledby="titulo-formulario">
+                
+                <h2 id="titulo-formulario">Registrar producto</h2>
+
+                <form id="formulario-producto">
+                    <!-- Identificador utilizado al editar un producto -->
+                    <input type="hidden" id="producto-id">
+
+                    <div class="grupo-formulario">
+                        <label for="nombre">Nombre del producto</label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            maxlength="100"
+                            placeholder="Ej. Teclado inalámbrico"
+                            required
+                        >
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="precio">Precio</label>
+                        <input
+                            type="number"
+                            id="precio"
+                            name="precio"
+                            min="0"
+                            step="0.01"
+                            placeholder="0.00"
+                            required
+                        >
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="cantidad">Cantidad disponible</label>
+                        <input
+                            type="number"
+                            id="cantidad"
+                            name="cantidad"
+                            min="0"
+                            step="1"
+                            placeholder="0"
+                            required
+                        >
+                    </div>
+
+                    <!-- Botones de acción -->
+                    <div class="acciones-formulario">
+                        <button type="submit" id="btn-guardar">
+                            Guardar producto
+                        </button>
+
+                        <button type="button" id="btn-cancelar" hidden>
+                            Cancelar edición
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Mensajes de éxito o error -->
+                <p id="mensaje" role="status" aria-live="polite"></p>
+            </section>
+
+            <!-- Sección de consulta -->
+            <section class="panel" aria-labelledby="titulo-listado">
+                <h2 id="titulo-listado">Productos registrados</h2>
+
+                <div class="grupo-formulario">
+                    <label for="buscar">Buscar producto</label>
+                    <input
+                        type="search"
+                        id="buscar"
+                        placeholder="Escribe el nombre del producto"
+                    >
+                </div>
+
+                <!-- Tabla donde JavaScript mostrará los registros -->
+                <div class="tabla-contenedor">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tabla-productos">
+                            <tr>
+                                <td colspan="5">Cargando productos...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <!-- Pie de página -->
+        <footer class="pie-pagina">
+            <p>Práctica 7 - INF5170 | Formulario con acceso a base de datos</p>
+        </footer>
+    </body>
+</html>
