@@ -1,0 +1,261 @@
+
+/* ************************ */
+/* 1. Configuración general */
+/* ************************ */
+
+/* Facilita el cálculo de las dimensiones de los elementos */
+* {
+    box-sizing: border-box;
+}
+
+/* Estilos generales de la página */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f6fa;
+    color: #263445;
+    line-height: 1.6;
+}
+
+/* Contenedor central que limita el ancho del contenido */
+.contenedor {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+/* ************* */
+/* 2. Encabezado */
+/* ************* */
+
+.encabezado {
+    background-color: #17365d;
+    color: #ffffff;
+    padding: 24px 0;
+}
+
+.encabezado h1 {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.encabezado p {
+    margin: 4px 0 0;
+    color: #dbeafe;
+}
+
+/* *********************** */
+/* 3. Paneles de contenido */
+/* *********************** */
+
+main.contenedor {
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+
+.panel {
+    background-color: #ffffff;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid #e1e7ef;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgb(23 54 93 / 6%);
+}
+
+.panel h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: #17365d;
+}
+
+/* ************* */
+/* 4. Formulario */
+/* ************* */
+
+.grupo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.grupo-formulario label {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.grupo-formulario input {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font: inherit;
+    background-color: #ffffff;
+}
+
+/* Resalta el campo que tiene el foco */
+.grupo-formulario input:focus {
+    outline: 2px solid #93c5fd;
+    border-color: #2563eb;
+}
+
+/* ********** */
+/* 5. Botones */
+/* ********** */
+
+.acciones-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+button {
+    padding: 11px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #1d4ed8;
+    color: #ffffff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1e40af;
+}
+
+button:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 2px;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Botón para cancelar una edición */
+#btn-cancelar {
+    background-color: #64748b;
+}
+
+#btn-cancelar:hover {
+    background-color: #475569;
+}
+
+/* **************************** */
+/* 6. Mensajes de la aplicación */
+/* **************************** */
+
+#mensaje {
+    margin-bottom: 0;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+#mensaje:empty {
+    display: none;
+}
+
+/* Estas clases podrán ser utilizadas por JavaScript */
+.mensaje-exito {
+    color: #15803d;
+}
+
+.mensaje-error {
+    color: #b91c1c;
+}
+
+/* ********************* */
+/* 7. Tabla de productos */
+/* ********************* */
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: #ffffff;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background-color: #edf2f8;
+    color: #17365d;
+    font-size: 0.9rem;
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+td button {
+    margin: 2px;
+    padding: 7px 10px;
+    font-size: 0.85rem;
+}
+
+/* Botón para eliminar un producto */
+.btn-eliminar {
+    background-color: #b91c1c;
+}
+
+.btn-eliminar:hover {
+    background-color: #991b1b;
+}
+
+/* **************** */
+/* 8. Pie de página */
+/* **************** */
+
+.pie-pagina {
+    padding: 18px;
+    background-color: #e2e8f0;
+    color: #475569;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.pie-pagina p {
+    margin: 0;
+}
+
+/* ********************************** */
+/* 9. Adaptación a pantallas pequeñas */
+/* ********************************** */
+
+@media (max-width: 600px) {
+    .encabezado h1 {
+        font-size: 1.65rem;
+    }
+
+    .panel {
+        padding: 16px;
+    }
+
+    .acciones-formulario {
+        flex-direction: column;
+    }
+
+    .acciones-formulario button {
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 9px;
+        font-size: 0.85rem;
+    }
+}
