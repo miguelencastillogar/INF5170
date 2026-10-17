@@ -14,8 +14,9 @@ const botonValidar = document.getElementById("boton-validar");
 const contenedorResultado = document.getElementById("resultado");
 
 // Define la dirección local del backend durante el desarrollo.
-// Cuando publiquemos el proyecto, sustituiremos esta dirección por la URL pública de la API.
-const URL_API = "http://localhost:5173/api/Cedulas/validar";
+// const URL_API = "http://localhost:5173/api/Cedulas/validar";
+// Dirección pública del servicio de validación desplegado en Render.
+const URL_API = "https://practica-9-api.onrender.com/api/Cedulas/validar";
 
 /**
  * Restablece el resultado anterior para que no parezca
