@@ -1,0 +1,166 @@
+
+/* Define los colores y valores generales que utilizaremos en la interfaz. */
+:root {
+    --color-primario: #174ea6; /* Color principal de los botones y detalles. */
+    --color-primario-hover: #123d82; /* Color del botón cuando el usuario pasa el cursor. */
+    --color-fondo: #f3f6fb; /* Color de fondo de la página. */
+    --color-tarjeta: #ffffff; /* Color de fondo del formulario. */
+    --color-texto: #202124; /* Color principal del texto. */
+    --color-texto-secundario: #5f6368; /* Color de los textos auxiliares. */
+    --color-borde: #dadce0; /* Color de los bordes de los elementos. */
+    --radio-borde: 14px; /* Radio de las esquinas redondeadas. */
+}
+
+/* Incluye el borde y el relleno dentro de las dimensiones declaradas. */
+* {
+    box-sizing: border-box;
+}
+
+/* Establece el aspecto general de toda la página. */
+body {
+    margin: 0; /* Elimina el margen predeterminado del navegador. */
+    min-height: 100vh; /* Permite que el fondo cubra toda la altura de la pantalla. */
+    display: flex; /* Activa el modelo de distribución flexible. */
+    align-items: center; /* Centra verticalmente el contenido. */
+    justify-content: center; /* Centra horizontalmente el contenido. */
+    padding: 24px; /* Mantiene espacio entre el contenido y los bordes de la pantalla. */
+    background-color: var(--color-fondo); /* Aplica el color de fondo definido. */
+    color: var(--color-texto); /* Establece el color general del texto. */
+    font-family: Arial, Helvetica, sans-serif; /* Define una tipografía legible y compatible. */
+}
+
+/* Limita el ancho del contenedor principal. */
+.contenedor {
+    width: 100%; /* Ocupa el ancho disponible en pantallas pequeñas. */
+    max-width: 560px; /* Evita que el contenido sea demasiado ancho. */
+}
+
+/* Diseña la tarjeta que contiene el formulario. */
+.tarjeta {
+    padding: 32px; /* Añade espacio interior. */
+    background-color: var(--color-tarjeta); /* Aplica el fondo blanco. */
+    border: 1px solid var(--color-borde); /* Dibuja un borde sutil. */
+    border-radius: var(--radio-borde); /* Redondea las esquinas. */
+    box-shadow: 0 8px 24px rgb(0 0 0 / 6%); /* Añade una sombra ligera. */
+}
+
+/* Organiza el encabezado y centra sus textos. */
+.encabezado {
+    margin-bottom: 28px; /* Separa el encabezado del formulario. */
+    text-align: center; /* Centra el título y la descripción. */
+}
+
+/* Da formato al título principal. */
+.encabezado h1 {
+    margin: 0 0 10px; /* Elimina el margen superior y separa el título del subtítulo. */
+    font-size: 1.7rem; /* Define el tamaño del título. */
+    line-height: 1.3; /* Mejora la separación entre líneas. */
+}
+
+/* Da formato a la descripción de la práctica. */
+.encabezado p {
+    margin: 0; /* Elimina el margen predeterminado del párrafo. */
+    color: var(--color-texto-secundario); /* Utiliza un tono secundario. */
+}
+
+/* Organiza los elementos del formulario verticalmente. */
+#formulario-cedula {
+    display: flex; /* Activa el modelo flexible. */
+    flex-direction: column; /* Coloca la etiqueta, el campo y el botón en columna. */
+    gap: 12px; /* Establece la separación entre los elementos. */
+}
+
+/* Da formato a la etiqueta del campo. */
+label {
+    font-weight: 600; /* Resalta el texto de la etiqueta. */
+}
+
+/* Diseña el campo donde se introduce la cédula. */
+input {
+    width: 100%; /* Ocupa todo el ancho disponible. */
+    min-height: 48px; /* Facilita la interacción táctil. */
+    padding: 12px 14px; /* Añade espacio interior. */
+    border: 1px solid var(--color-borde); /* Define un borde discreto. */
+    border-radius: 10px; /* Redondea las esquinas del campo. */
+    background-color: #ffffff; /* Mantiene el fondo blanco. */
+    color: var(--color-texto); /* Define el color de los dígitos. */
+    font-size: 1rem; /* Mantiene un tamaño de texto legible. */
+}
+
+/* Destaca el campo cuando recibe el foco del teclado o del ratón. */
+input:focus {
+    outline: 2px solid var(--color-primario); /* Dibuja un indicador visible de foco. */
+    outline-offset: 2px; /* Separa el indicador del borde del campo. */
+}
+
+/* Diseña el botón principal. */
+button {
+    min-height: 48px; /* Facilita la interacción táctil. */
+    padding: 12px 18px; /* Añade espacio interior. */
+    border: none; /* Elimina el borde predeterminado. */
+    border-radius: 10px; /* Redondea las esquinas. */
+    background-color: var(--color-primario); /* Aplica el color principal. */
+    color: #ffffff; /* Contrasta el texto con el fondo. */
+    font-size: 1rem; /* Define el tamaño del texto. */
+    font-weight: 600; /* Resalta la acción principal. */
+    cursor: pointer; /* Indica que el botón se puede pulsar. */
+    transition: background-color 0.2s ease; /* Suaviza el cambio de color. */
+}
+
+/* Cambia el color cuando el usuario pasa el cursor sobre el botón. */
+button:hover {
+    background-color: var(--color-primario-hover);
+}
+
+/* Indica visualmente que el botón está deshabilitado. */
+button:disabled {
+    cursor: not-allowed; /* Indica que la acción no está disponible. */
+    opacity: 0.65; /* Reduce la intensidad visual del botón. */
+}
+
+/* Diseña el área donde se mostrará la respuesta de la API. */
+#resultado {
+    margin-top: 20px; /* Separa el resultado del formulario. */
+    padding: 14px; /* Añade espacio interior. */
+    border: 1px solid var(--color-borde); /* Delimita el área del mensaje. */
+    border-radius: 10px; /* Redondea las esquinas. */
+    line-height: 1.5; /* Mejora la legibilidad del mensaje. */
+    overflow-wrap: anywhere; /* Evita que el contenido largo desborde la tarjeta. */
+}
+
+/* Aplica el color de fondo de un resultado matemáticamente válido. */
+#resultado.resultado-valido {
+    border-color: #a8d5b5; /* Resalta el borde con un tono verde suave. */
+    background-color: #edf8f0; /* Aplica un fondo verde claro. */
+}
+
+/* Aplica el color de fondo de un resultado matemáticamente inválido. */
+#resultado.resultado-invalido {
+    border-color: #e7b5b5; /* Resalta el borde con un tono rojo suave. */
+    background-color: #fdf0f0; /* Aplica un fondo rojo claro. */
+}
+
+/* Aplica un estilo específico a los errores de comunicación o de entrada. */
+#resultado.resultado-error {
+    border-color: #e5c98b; /* Utiliza un borde de tono ámbar. */
+    background-color: #fff8e6; /* Aplica un fondo amarillo suave. */
+}
+
+/* Da formato a la nota informativa inferior. */
+.nota {
+    margin: 22px 0 0; /* Separa la nota del resultado. */
+    color: var(--color-texto-secundario); /* Utiliza un tono secundario. */
+    font-size: 0.85rem; /* Reduce ligeramente el tamaño del texto. */
+    line-height: 1.5; /* Mantiene una lectura cómoda. */
+}
+
+/* Adapta los espacios y el título a pantallas pequeñas. */
+@media (max-width: 480px) {
+    .tarjeta {
+        padding: 22px; /* Reduce el relleno para aprovechar el espacio. */
+    }
+
+    .encabezado h1 {
+        font-size: 1.4rem; /* Reduce el título en dispositivos pequeños. */
+    }
+}

@@ -1,0 +1,89 @@
+
+<!-- Declara que el documento utiliza HTML5. -->
+<!DOCTYPE html>
+
+<!-- Indica que el idioma principal de la página es español. -->
+<html lang="es">
+
+    <head>
+        <!-- Contiene los metadatos y recursos necesarios para la página. -->
+
+        <meta charset="UTF-8">
+        <!-- Permite mostrar correctamente las tildes y otros caracteres especiales. -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Adapta la página al ancho de pantallas de computadoras, tabletas y móviles. -->
+
+        <title>Validador de Cédula Dominicana | INF5170</title>
+        <!-- Define el título que aparece en la pestaña del navegador. -->
+
+        <link rel="stylesheet" href="css/estilos.css">
+        <!-- Vincula la hoja de estilos externa. -->
+
+    </head>
+
+    <body>
+        <!-- Contiene los elementos visibles de la página. -->
+
+        <main class="contenedor">
+            <!-- Agrupa el contenido principal de la aplicación. -->
+
+            <section class="tarjeta" aria-labelledby="titulo-principal">
+                <!-- Organiza el formulario y proporciona un título accesible. -->
+
+                <header class="encabezado">
+                    <!-- Agrupa el título y la descripción de la aplicación. -->
+
+                    <h1 id="titulo-principal">Validador de Cédula Dominicana</h1>
+                    <!-- Presenta el nombre principal del sistema. -->
+
+                    <p>Práctica 9 · INF5170</p>
+                    <!-- Identifica la actividad académica. -->
+
+                </header>
+
+                <form id="formulario-cedula">
+                    <!-- Define el formulario que utilizaremos para enviar la cédula. -->
+
+                    <label for="cedula">Número de cédula</label>
+                    <!-- Asocia una etiqueta descriptiva con el campo de entrada. -->
+
+                    <input
+                        type="text"
+                        id="cedula"
+                        name="cedula"
+                        placeholder="Ingrese los 11 dígitos"
+                        inputmode="numeric"
+                        maxlength="11"
+                        pattern="[0-9]{11}"
+                        autocomplete="off"
+                        required
+                    >
+                    <!-- Recibe la cédula como texto para conservar los ceros iniciales. -->
+
+                    <button type="submit" id="boton-validar">
+                        Validar cédula
+                    </button>
+                    <!-- Envía el formulario cuando el usuario presiona el botón. -->
+
+                </form>
+
+                <div id="resultado" role="status" aria-live="polite" hidden>
+                    <!-- Presentará el resultado de la validación de manera accesible. -->
+                </div>
+
+                <p class="nota">
+                    La validación comprueba el algoritmo matemático del módulo 10;
+                    no confirma la identidad del titular.
+                </p>
+                <!-- Explica el alcance de la comprobación realizada por el sistema. -->
+
+            </section>
+
+        </main>
+
+        <script src="js/app.js" defer></script>
+        <!-- Carga el JavaScript externo después de analizar el documento HTML. -->
+
+    </body>
+</html>
