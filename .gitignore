@@ -1,0 +1,8 @@
+# Archivos generados por la compilación de .NET.
+**/bin/
+**/obj/
+
+# Configuración y caché local de Visual Studio.
+.vs/
+*.user
+*.suo
