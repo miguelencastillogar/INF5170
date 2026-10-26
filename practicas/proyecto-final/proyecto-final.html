@@ -1,0 +1,101 @@
+<!--  
+  Declara el tipo de documento e indica al navegador que debe interpretar
+  y renderizar la página utilizando el estándar de HTML5. Su función principal es evitar
+  que el navegador entre en "modo de compatibilidad" (quirks mode) y asegurar que la web
+  se visualice correctamente.
+-->
+<!DOCTYPE html>
+
+<!--
+    Elemento raíz del documento HTML.
+    lang="es" indica que el contenido principal está en español.
+-->
+<html lang="es">
+    <head>
+        <!-- Metadatos básicos para codificación, diseño adaptable y descripción del sitio. -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Chatbot académico para consultar el Estatuto Orgánico de la Universidad Autónoma de Santo Domingo.">
+        <title>Chatbot del Estatuto Orgánico | UASD</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/app.js" defer></script>
+    </head>
+    <body>
+        <!-- Encabezado institucional y contexto académico del proyecto. -->
+        <header class="encabezado">
+            <div class="encabezado__contenido">
+                <div class="marca" aria-hidden="true">UASD</div>
+                <p class="ceja">Proyecto final · INF5170</p>
+                <h1>Chatbot del Estatuto Orgánico de la UASD</h1>
+                <p class="subtitulo">Consulta el documento institucional mediante preguntas en lenguaje natural.</p>
+                <div class="estado-fuente"><span class="punto"></span> Base documental: edición de abril de 2012</div>
+            </div>
+        </header>
+
+        <!-- Área principal: conversación, preguntas sugeridas y advertencia de fuente. -->
+        <main class="contenedor">
+            <!-- Panel interactivo: estado de carga, control de IA, mensajes y formulario. -->
+            <section class="panel panel-chat" aria-labelledby="titulo-conversacion">
+                <div class="panel__encabezado">
+                    <div>
+                        <p class="ceja ceja--oscura">Asistente documental</p>
+                        <h2 id="titulo-conversacion">Conversación</h2>
+                    </div>
+                    <button id="limpiar-conversacion" class="boton boton--secundario" type="button">Nueva consulta</button>
+                </div>
+
+                <div id="estado-carga" class="estado-carga" role="status">Cargando el conocimiento documental…</div>
+
+                <!-- Controles para activar el modelo de IA local bajo demanda. -->
+                <div class="acciones-chat">
+                    <button id="activar-ia" class="boton boton--secundario boton--ia" type="button">Activar IA local</button>
+                </div>
+                <div id="estado-ia" class="estado-ia" data-tipo="info" role="status">La búsqueda documental está disponible mientras la IA local permanezca desactivada.</div>
+
+                <div id="mensajes" class="mensajes" aria-live="polite" aria-relevant="additions text">
+                    <div class="mensaje mensaje--bot">
+                        <span class="mensaje__autor">Asistente</span>
+                        <p>¡Hola! Puedes consultarme sobre el Estatuto Orgánico de la UASD. Selecciona una pregunta sugerida o escribe tu consulta.</p>
+                    </div>
+                </div>
+
+                <form id="formulario-consulta" class="formulario">
+                    <label for="pregunta">Tu pregunta</label>
+                    <div class="formulario__fila">
+                        <input id="pregunta" name="pregunta" type="text" maxlength="500"
+                            placeholder="Ej.: ¿Cuáles son las funciones del rector?" required autocomplete="off">
+                        <button id="boton-enviar" class="boton boton--principal" type="submit">Consultar</button>
+                    </div>
+                    <p class="ayuda">Las respuestas se basan en el banco documental local y muestran referencias cuando están disponibles.</p>
+                </form>
+            </section>
+
+            <!-- Preguntas sugeridas generadas desde el banco documental local. -->
+            <section class="panel panel-sugerencias" aria-labelledby="titulo-sugerencias">
+                <div class="panel__encabezado panel__encabezado--simple">
+                    <div>
+                        <p class="ceja ceja--oscura">Para comenzar</p>
+                        <h2 id="titulo-sugerencias">Preguntas sugeridas</h2>
+                    </div>
+                    <span id="contador-sugerencias" class="contador">Preparando…</span>
+                </div>
+                <div id="preguntas-sugeridas" class="sugerencias">
+                    <p class="texto-secundario">Las preguntas se mostrarán al terminar de cargar el archivo de conocimiento.</p>
+                </div>
+            </section>
+
+            <!-- Advertencia de vigencia y enlace a la fuente institucional consultada. -->
+            <aside class="aviso-fuente">
+                <strong>Nota sobre la fuente</strong>
+                <p>Este prototipo utiliza una edición publicada en abril de 2012. No certifica que incluya todas las reformas posteriores. Parte del material extraído aún requiere cotejo visual con el PDF original; consulta las referencias y advertencias que acompañan cada respuesta.</p>
+                <a href="https://postgrado.uasd.edu.do/wp-content/uploads/2024/06/ESTATUTO-ORGANICO-UASD.pdf" target="_blank" rel="noopener noreferrer">Consultar el PDF del Estatuto</a>
+            </aside>
+        </main>
+
+        <!-- Pie de página con la identificación académica del prototipo. -->
+        <footer class="pie">
+            <p>Proyecto académico · INF5170 — Laboratorio de Lenguaje de Programación III</p>
+            <p>Chatbot documental del Estatuto Orgánico de la UASD</p>
+        </footer>
+    </body>
+</html>
