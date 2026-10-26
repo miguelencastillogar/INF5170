@@ -8,6 +8,10 @@
     "enlace": "#formulario-multipagina"
   },
   {
+    "nombre": "Registros guardados",
+    "enlace": "#registros-guardados"
+  },
+  {
     "nombre": "Proyecto Final · Aplicación integrada",
     "enlace": "#inicio"
   },
@@ -29,7 +33,18 @@
   {
     "nombre": "Práctica 2 · HTML",
     "enlace": "../practica-2/practica-2-1/practica-2-1.html",
-    "externo": true
+    "submenu": [
+      {
+        "nombre": "Práctica 2.1 · Página personal y estructura HTML",
+        "enlace": "../practica-2/practica-2-1/practica-2-1.html",
+        "externo": true
+      },
+      {
+        "nombre": "Práctica 2.2 · Continuación de HTML",
+        "enlace": "../practica-2/practica-2-2/practica-2-2.html",
+        "externo": true
+      }
+    ]
   },
   {
     "nombre": "Práctica 3 · CSS responsivo",
@@ -42,14 +57,51 @@
     "externo": true
   },
   {
-    "nombre": "Práctica 5 · Pruebas web",
+    "nombre": "Práctica 5 · Pruebas modernas",
     "enlace": "../practica-5/amverfu/practica-5.html",
-    "externo": true
+    "submenu": [
+      {
+        "nombre": "AMVERFU · Explorador Pokémon",
+        "enlace": "../practica-5/amverfu/practica-5.html",
+        "externo": true
+      },
+      {
+        "nombre": "Práctica 5.1 · Pruebas UI y API (Playwright)",
+        "enlace": "../practica-5/practica-5-1/README.md",
+        "externo": true
+      },
+      {
+        "nombre": "Práctica 5.2 · BDD con Gherkin",
+        "enlace": "../practica-5/practica-5-2/README.md",
+        "externo": true
+      },
+      {
+        "nombre": "Práctica 5.3 · Pruebas de rendimiento",
+        "enlace": "../practica-5/practica-5-3/README.md",
+        "externo": true
+      }
+    ]
   },
   {
-    "nombre": "Práctica 6 · XML y JSON",
+    "nombre": "Práctica 6 · Formatos e intercambio de datos",
     "enlace": "../practica-6/Practica_6_Tarea_1_XML_Miguel_Castillo_Garcia.pdf",
-    "externo": true
+    "submenu": [
+      {
+        "nombre": "Tarea 6.1 · XML",
+        "enlace": "../practica-6/Practica_6_Tarea_1_XML_Miguel_Castillo_Garcia.pdf",
+        "externo": true
+      },
+      {
+        "nombre": "Tarea 6.2 · JSON",
+        "enlace": "../practica-6/Practica_6_Tarea_2_JSON_Miguel_Castillo_Garcia.pdf",
+        "externo": true
+      },
+      {
+        "nombre": "Tarea 6.3 · AJAX",
+        "enlace": "../practica-6/Practica_6_Tarea_3_AJAX_Miguel_Castillo_Garcia.pdf",
+        "externo": true
+      }
+    ]
   },
   {
     "nombre": "Práctica 7 · Base de datos",
@@ -57,7 +109,7 @@
     "externo": true
   },
   {
-    "nombre": "Práctica 8 · MVC",
+    "nombre": "Práctica 8 · Modelo MVC",
     "enlace": "../practica-8/practica-8-modelo-mvc.pdf",
     "externo": true
   },
@@ -69,11 +121,6 @@
   {
     "nombre": "Práctica 10 · Spring Framework",
     "enlace": "../practica-10/Practica_10_Spring_Framework_Miguel_Castillo_Garcia.pdf",
-    "externo": true
-  },
-  {
-    "nombre": "Proyecto Final · Chatbot del Estatuto Orgánico de la UASD",
-    "enlace": "../proyecto-final/proyecto-final.html",
     "externo": true
   }
 ]
