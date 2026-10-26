@@ -38,28 +38,44 @@ function mostrarAplicacion(usuario) {
   if (autenticado) { cargarMenu(); cargarRegistros(); }
 }
 
-// El menú se obtiene desde JSON y sus elementos se crean mediante DOM.
+// El menú se obtiene desde JSON. La función recursiva permite crear submenús anidados.
 async function cargarMenu() {
   const menu = document.getElementById("menu-principal");
   const mensaje = document.getElementById("mensaje-menu");
+
+  // Construye una opción y, cuando corresponde, su lista secundaria.
+  function crearOpcion(opcion) {
+    const item = document.createElement("li");
+    const enlace = document.createElement("a");
+    enlace.textContent = opcion.nombre;
+    enlace.href = opcion.enlace;
+
+    if (opcion.externo) {
+      enlace.target = "_blank";
+      enlace.rel = "noopener noreferrer";
+    }
+
+    item.appendChild(enlace);
+
+    // Renderizar recursivamente el submenú mantiene el JSON como fuente del menú.
+    if (Array.isArray(opcion.submenu) && opcion.submenu.length > 0) {
+      const sublista = document.createElement("ul");
+      sublista.className = "submenu";
+      opcion.submenu.forEach((subopcion) => {
+        sublista.appendChild(crearOpcion(subopcion));
+      });
+      item.appendChild(sublista);
+    }
+
+    return item;
+  }
+
   try {
     const respuesta = await fetch("data/menu.json");
     if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`);
     const opciones = await respuesta.json();
     menu.replaceChildren();
-
-    opciones.forEach((opcion) => {
-      const item = document.createElement("li");
-      const enlace = document.createElement("a");
-      enlace.textContent = opcion.nombre;
-      enlace.href = opcion.enlace;
-      if (opcion.externo) {
-        enlace.target = "_blank";
-        enlace.rel = "noopener noreferrer";
-      }
-      item.appendChild(enlace);
-      menu.appendChild(item);
-    });
+    opciones.forEach((opcion) => menu.appendChild(crearOpcion(opcion)));
     mostrarMensaje(mensaje, "");
   } catch (error) {
     console.error("No se pudo cargar el menú JSON:", error);
