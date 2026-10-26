@@ -1,0 +1,398 @@
+/* ==========================================================
+   Chatbot del Estatuto Orgánico de la UASD
+   Estilos responsive, accesibles y sin dependencias externas.
+   ========================================================== */
+
+/* Variables globales: paleta, superficies, texto y sombra reutilizados por la interfaz. */
+:root {
+    color-scheme: light;
+    --azul: #17365d;
+    --azul-profundo: #102744;
+    --azul-claro: #e6effb;
+    --fondo: #f2f5f9;
+    --superficie: #ffffff;
+    --texto: #25364d;
+    --texto-secundario: #64748b;
+    --borde: #dbe3ed;
+    --verde: #198754;
+    --sombra: 0 12px 34px rgba(16, 39, 68, 0.08);
+}
+
+/* Modelo de caja consistente para calcular tamaños y espacios. */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+/* Estilos base del documento y tipografía de sistema, sin fuentes externas. */
+body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+button, input { font: inherit; }
+
+button:focus-visible, input:focus-visible, a:focus-visible {
+    outline: 3px solid #f0b429;
+    outline-offset: 3px;
+}
+
+/* Encabezado visual con título, descripción y edición de la fuente documental. */
+.encabezado {
+    color: #fff;
+    background: linear-gradient(135deg, var(--azul-profundo), var(--azul));
+    padding: 42px 20px 38px;
+}
+
+.encabezado__contenido {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.marca {
+    display: inline-grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255,255,255,.55);
+    border-radius: 50%;
+    font-weight: 800;
+    letter-spacing: .04em;
+}
+
+.ceja {
+    margin: 0 0 6px;
+    color: #c6d8f0;
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.ceja--oscura { color: #617895; }
+
+h1, h2, p { margin-top: 0; }
+
+h1 {
+    max-width: 900px;
+    margin: 0 auto 12px;
+    font-size: clamp(1.75rem, 4vw, 2.65rem);
+    line-height: 1.15;
+}
+
+.subtitulo {
+    max-width: 760px;
+    margin: 0 auto 18px;
+    color: #e0eaf7;
+    font-size: 1.05rem;
+}
+
+.estado-fuente {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 6px 12px;
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 999px;
+    color: #f2f7ff;
+    font-size: .86rem;
+}
+
+.punto {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #86d6a8;
+}
+
+/* Contenedor central que organiza los paneles y el aviso de fuente. */
+.contenedor {
+    width: min(100% - 32px, 1000px);
+    margin: 28px auto 36px;
+    display: grid;
+    gap: 22px;
+}
+
+/* Superficie compartida por el chat y la sección de preguntas sugeridas. */
+.panel {
+    min-width: 0;
+    padding: clamp(18px, 3vw, 30px);
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+}
+
+.panel__encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.panel__encabezado--simple { margin-bottom: 16px; }
+
+.panel__encabezado h2 {
+    margin: 0;
+    color: var(--azul);
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+}
+
+.contador {
+    flex: 0 0 auto;
+    color: var(--texto-secundario);
+    font-size: .85rem;
+}
+
+/* Historial conversacional con desplazamiento independiente. */
+.mensajes {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 220px;
+    max-height: 480px;
+    overflow-y: auto;
+    padding: 18px;
+    background: #f8fafc;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    scroll-behavior: smooth;
+}
+
+/* Burbuja común de mensajes; modificadores distinguen usuario y asistente. */
+.mensaje {
+    max-width: 88%;
+    padding: 13px 16px;
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    overflow-wrap: anywhere;
+}
+
+.mensaje p { margin: 0; white-space: pre-line; }
+
+.mensaje--bot {
+    align-self: flex-start;
+    background: #fff;
+    border-top-left-radius: 5px;
+}
+
+.mensaje--usuario {
+    align-self: flex-end;
+    background: var(--azul-claro);
+    border-color: #cbdcf5;
+    border-top-right-radius: 5px;
+}
+
+.mensaje__autor {
+    display: block;
+    margin-bottom: 4px;
+    color: #526a86;
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.mensaje__referencia {
+    margin-top: 12px !important;
+    padding-top: 10px;
+    border-top: 1px solid var(--borde);
+    color: #526a86;
+    font-size: .9rem;
+}
+
+.mensaje__advertencia {
+    margin-top: 8px !important;
+    color: #805b16;
+    font-size: .86rem;
+}
+
+.mensaje__tipo {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--texto-secundario);
+    font-size: .78rem;
+}
+
+.estado-carga {
+    margin-bottom: 12px;
+    color: var(--texto-secundario);
+    font-size: .9rem;
+}
+
+.estado-carga[data-tipo="error"] { color: #a12622; }
+.estado-carga[data-tipo="ok"] { color: var(--verde); }
+
+/* Controles para escribir y enviar una pregunta al asistente. */
+.formulario { margin-top: 20px; }
+
+.formulario label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--azul);
+    font-weight: 700;
+}
+
+.formulario__fila {
+    display: flex;
+    gap: 10px;
+}
+
+.formulario input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    background: #fff;
+    color: var(--texto);
+}
+
+.formulario input:disabled { background: #f1f5f9; }
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 9px 15px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background .15s ease, transform .15s ease;
+}
+
+.boton:hover { transform: translateY(-1px); }
+.boton:disabled { cursor: not-allowed; opacity: .55; transform: none; }
+
+.boton--principal { background: var(--azul); color: #fff; }
+.boton--principal:hover { background: var(--azul-profundo); }
+.boton--secundario { background: #fff; color: var(--azul); border-color: var(--borde); }
+.boton--secundario:hover { background: #f1f5f9; }
+
+.ayuda, .texto-secundario {
+    margin: 8px 0 0;
+    color: var(--texto-secundario);
+    font-size: .86rem;
+}
+
+/* Cuadrícula de preguntas rápidas que se adapta a pantallas estrechas. */
+.sugerencias {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+}
+
+.boton-sugerido {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    background: #f8fafc;
+    color: var(--azul);
+    cursor: pointer;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.boton-sugerido:hover { background: var(--azul-claro); border-color: #b7cce9; }
+
+/* Aviso visible sobre fecha, alcance y limitaciones de la fuente. */
+.aviso-fuente {
+    padding: 18px 20px;
+    border-left: 4px solid #d6a43a;
+    border-radius: 8px;
+    background: #fffaf0;
+    color: #55431e;
+}
+
+.aviso-fuente p { margin: 6px 0 8px; font-size: .92rem; }
+.aviso-fuente a { color: #17365d; font-weight: 700; }
+
+/* Pie de página académico. */
+.pie {
+    padding: 22px 16px;
+    border-top: 1px solid var(--borde);
+    color: var(--texto-secundario);
+    text-align: center;
+    font-size: .85rem;
+}
+
+.pie p { margin: 3px 0; }
+
+/* Ajustes para móviles: reducir espacios y apilar los controles. */
+@media (max-width: 640px) {
+    .encabezado { padding: 30px 16px; }
+    .contenedor { width: min(100% - 20px, 1000px); margin-top: 14px; gap: 14px; }
+    .panel { padding: 16px; border-radius: 14px; }
+    .panel__encabezado { align-items: flex-start; }
+    .mensajes { min-height: 200px; max-height: 55vh; padding: 10px; }
+    .mensaje { max-width: 96%; padding: 11px 12px; }
+    .formulario__fila { flex-direction: column; }
+    .formulario__fila .boton { width: 100%; }
+    .sugerencias { grid-template-columns: 1fr; }
+    .boton--secundario { padding: 8px 10px; font-size: .85rem; }
+}
+
+/* Accesibilidad: respetar la preferencia del sistema por menos movimiento. */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
+
+
+/* Estado visual del control de IA local y sus mensajes informativos.
+   Los atributos data-tipo permiten reflejar carga, éxito o error sin lógica de estilo en JavaScript. */
+.acciones-chat {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.boton--ia {
+    background: #e6f4ec;
+    border-color: #b9dfc9;
+    color: #155c36;
+}
+
+.boton--ia:hover { background: #d5ecdf; }
+
+.estado-ia {
+    margin: -8px 0 12px;
+    padding: 10px 12px;
+    border: 1px solid #dbe3ed;
+    border-radius: 9px;
+    background: #f8fafc;
+    color: #526a86;
+    font-size: .86rem;
+}
+
+.estado-ia[data-tipo="cargando"] {
+    border-color: #b7cce9;
+    background: #eef5ff;
+    color: #17365d;
+}
+
+.estado-ia[data-tipo="ok"] {
+    border-color: #b9dfc9;
+    background: #effaf3;
+    color: #155c36;
+}
+
+.estado-ia[data-tipo="error"] {
+    border-color: #f0c4c4;
+    background: #fff5f5;
+    color: #922b2b;
+}
+
+@media (max-width: 640px) {
+    .acciones-chat { width: 100%; justify-content: stretch; }
+    .acciones-chat .boton { flex: 1; }
+}
