@@ -63,3 +63,18 @@ code { background:#f1f5f9; border-radius:4px; padding:.1rem .3rem; }
 .tabla-registros th,.tabla-registros td { text-align:left; padding:.7rem; border-bottom:1px solid #e2e8f0; vertical-align:top; }
 .tabla-registros th { background:#f1f5f9; color:#14213d; }
 .tabla-registros td { overflow-wrap:anywhere; }
+
+/* Submenús del menú dinámico: diferencian las entregas sin perder accesibilidad. */
+#menu-principal .submenu {
+  list-style: none;
+  margin: .15rem 0 .65rem .65rem;
+  padding: 0 0 0 .7rem;
+  border-left: 2px solid #dbe5f2;
+}
+#menu-principal .submenu li { margin: .15rem 0; }
+#menu-principal .submenu a {
+  padding: .45rem .55rem;
+  font-size: .9rem;
+  color: #526783;
+}
+#menu-principal .submenu a:hover { background: #edf4ff; color: #214d8e; }
