@@ -67,17 +67,17 @@
       },
       {
         "nombre": "Práctica 5.1 · Pruebas UI y API (Playwright)",
-        "enlace": "../practica-5/practica-5-1/README.md",
+        "enlace": "https://github.com/miguelencastillogar/INF5170/tree/main/practicas/practica-5/practica-5-1",
         "externo": true
       },
       {
         "nombre": "Práctica 5.2 · BDD con Gherkin",
-        "enlace": "../practica-5/practica-5-2/README.md",
+        "enlace": "https://github.com/miguelencastillogar/INF5170/tree/main/practicas/practica-5/practica-5-2",
         "externo": true
       },
       {
         "nombre": "Práctica 5.3 · Pruebas de rendimiento",
-        "enlace": "../practica-5/practica-5-3/README.md",
+        "enlace": "https://github.com/miguelencastillogar/INF5170/tree/main/practicas/practica-5/practica-5-3",
         "externo": true
       }
     ]
@@ -121,6 +121,11 @@
   {
     "nombre": "Práctica 10 · Spring Framework",
     "enlace": "../practica-10/Practica_10_Spring_Framework_Miguel_Castillo_Garcia.pdf",
+    "externo": true
+  },
+  {
+    "nombre": "Proyecto Final · Chatbot del Estatuto Orgánico de la UASD",
+    "enlace": "../proyecto-final/proyecto-final.html",
     "externo": true
   }
 ]
