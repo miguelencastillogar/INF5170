@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aplicación integrada candidata para la entrega final de INF5170.">
+    <title>INF5170 | Aplicación integrada</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <header class="encabezado">
+      <a class="marca" href="./" aria-label="Inicio de la aplicación">INF5170 <span>Entrega final</span></a>
+      <div id="estado-sesion" class="estado-sesion">Sesión no iniciada</div>
+    </header>
+
+    <main class="contenedor">
+      <section id="vista-login" class="panel panel-login" aria-labelledby="titulo-login">
+        <p class="etiqueta">Laboratorio de Programación III</p>
+        <h1 id="titulo-login">Iniciar sesión</h1>
+        <p>Accede con la cuenta de prueba creada para esta aplicación.</p>
+        <form id="formulario-login">
+          <label for="correo-login">Correo electrónico</label>
+          <input id="correo-login" name="email" type="email" autocomplete="username" required>
+          <label for="clave-login">Contraseña</label>
+          <input id="clave-login" name="password" type="password" autocomplete="current-password" required>
+          <button id="btn-login" type="submit">Entrar</button>
+        </form>
+        <p id="mensaje-login" class="mensaje" role="status" aria-live="polite"></p>
+        <p class="nota">La cuenta debe crearse previamente en Supabase. No se habilita el registro público de usuarios.</p>
+      </section>
+
+      <section id="vista-aplicacion" hidden>
+        <div class="bienvenida">
+          <div>
+            <p class="etiqueta">Aplicación integrada</p>
+            <h1>Portal académico INF5170</h1>
+            <p>Acceso a las prácticas del portafolio y al formulario multipágina con almacenamiento en base de datos.</p>
+          </div>
+          <button id="btn-cerrar-sesion" class="boton-secundario" type="button">Cerrar sesión</button>
+        </div>
+
+        <div class="distribucion">
+          <nav class="panel navegacion" aria-label="Menú dinámico">
+            <h2>Menú principal</h2>
+            <p class="texto-secundario">Las opciones se cargan desde <code>data/menu.json</code>.</p>
+            <ul id="menu-principal"><li>Cargando menú…</li></ul>
+            <p id="mensaje-menu" class="mensaje" role="status"></p>
+          </nav>
+
+          <div class="contenido">
+            <section id="inicio" class="panel">
+              <h2>Bienvenido</h2>
+              <p>Esta versión candidata integra el inicio de sesión, un menú construido desde JSON y un formulario de varias etapas.</p>
+              <p>Utiliza el menú para visitar las prácticas publicadas o completar el formulario.</p>
+            </section>
+
+            <section id="formulario-multipagina" class="panel">
+              <p class="etiqueta">Formulario multipágina</p>
+              <h2>Registro de información</h2>
+              <p>El formulario se completa en tres pasos. Los datos se guardan en Supabase al confirmar el último paso.</p>
+              <div class="progreso" aria-live="polite"><span id="paso-indicador">Paso 1 de 3</span><div class="barra"><span id="barra-progreso"></span></div></div>
+              <form id="formulario-final">
+                <fieldset data-paso="1">
+                  <legend>1. Datos personales</legend>
+                  <label for="nombre">Nombre completo</label>
+                  <input id="nombre" name="nombre" maxlength="120" autocomplete="name" required>
+                  <label for="correo">Correo electrónico</label>
+                  <input id="correo" name="correo" type="email" maxlength="254" autocomplete="email" required>
+                </fieldset>
+                <fieldset data-paso="2" hidden>
+                  <legend>2. Información de contacto</legend>
+                  <label for="telefono">Teléfono (opcional)</label>
+                  <input id="telefono" name="telefono" type="tel" maxlength="30" autocomplete="tel">
+                  <label for="motivo">Motivo del registro</label>
+                  <select id="motivo" name="motivo" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="consulta">Consulta académica</option>
+                    <option value="comentario">Comentario sobre el portafolio</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </fieldset>
+                <fieldset data-paso="3" hidden>
+                  <legend>3. Detalles y confirmación</legend>
+                  <label for="detalles">Detalles adicionales (opcional)</label>
+                  <textarea id="detalles" name="detalles" rows="4" maxlength="2000"></textarea>
+                  <p class="nota">Al pulsar «Guardar registro», la información se almacenará asociada a tu usuario autenticado.</p>
+                </fieldset>
+                <p id="mensaje-formulario" class="mensaje" role="status" aria-live="polite"></p>
+                <div class="acciones">
+                  <button id="btn-anterior" class="boton-secundario" type="button" hidden>Anterior</button>
+                  <button id="btn-siguiente" type="button">Siguiente</button>
+                  <button id="btn-guardar" type="submit" hidden>Guardar registro</button>
+                </div>
+              </form>
+            </section>
+
+            <section id="registros-guardados" class="panel">
+              <h2>Registros guardados</h2>
+              <p>Estos son los registros asociados a tu cuenta.</p>
+              <p id="mensaje-registros" class="mensaje" role="status" aria-live="polite"></p>
+              <div class="tabla-registros">
+                <table>
+                  <thead><tr><th>ID</th><th>Nombre</th><th>Correo</th><th>Motivo</th><th>Fecha</th></tr></thead>
+                  <tbody id="tabla-registros"><tr><td colspan="5">Cargando registros…</td></tr></tbody>
+                </table>
+              </div>
+              <button id="btn-actualizar-registros" class="boton-secundario" type="button">Actualizar listado</button>
+            </section>
+
+            <section id="resultado" class="panel" hidden>
+              <h2>Registro guardado</h2>
+              <p id="mensaje-resultado"></p>
+              <button id="btn-nuevo" type="button">Crear otro registro</button>
+            </section>
+          </div>
+        </div>
+      </section>
+      <footer><p>INF5170 · Proyecto integrador académico · Versión candidata para validación</p></footer>
+    </main>
+  </body>
+</html>

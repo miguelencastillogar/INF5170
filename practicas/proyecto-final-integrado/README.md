@@ -16,7 +16,7 @@ Integrar en una aplicación web los requisitos principales del mandato final de 
 
 ```text
 practicas/proyecto-final-integrado/
-├── index.html
+├── integracion-practicas.html
 ├── css/estilos.css
 ├── js/app.js
 ├── data/menu.json

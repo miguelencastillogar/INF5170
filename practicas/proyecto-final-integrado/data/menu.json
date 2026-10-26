@@ -70,5 +70,10 @@
     "nombre": "Práctica 10 · Spring Framework",
     "enlace": "../practica-10/Practica_10_Spring_Framework_Miguel_Castillo_Garcia.pdf",
     "externo": true
+  },
+  {
+    "nombre": "Proyecto Final · Chatbot del Estatuto Orgánico de la UASD",
+    "enlace": "../proyecto-final/proyecto-final.html",
+    "externo": true
   }
 ]
