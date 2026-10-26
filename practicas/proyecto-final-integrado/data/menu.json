@@ -12,6 +12,11 @@
     "enlace": "#inicio"
   },
   {
+    "nombre": "Proyecto Final · Chatbot del Estatuto Orgánico de la UASD",
+    "enlace": "../proyecto-final/proyecto-final.html",
+    "externo": true
+  },
+  {
     "nombre": "Práctica 0 · Arquitectura web",
     "enlace": "../practica-0/practica_0_opinion_arquitectura_aplicaciones_web.pdf",
     "externo": true
