@@ -1,0 +1,15 @@
+[
+  {"nombre":"Inicio","enlace":"#inicio"},
+  {"nombre":"Formulario multipágina","enlace":"#formulario-multipagina"},
+  {"nombre":"Práctica 0 · Arquitectura web","enlace":"../practicas/practica-0/practica_0_opinion_arquitectura_aplicaciones_web.pdf","externo":true},
+  {"nombre":"Práctica 1 · Página personal","enlace":"../practicas/practica-1/practica-1.html","externo":true},
+  {"nombre":"Práctica 2 · HTML","enlace":"../practicas/practica-2/practica-2-1/practica-2-1.html","externo":true},
+  {"nombre":"Práctica 3 · CSS responsivo","enlace":"../practicas/practica-3/practica-3.html","externo":true},
+  {"nombre":"Práctica 4 · Menú dinámico","enlace":"../practicas/practica-4/practica-4.html","externo":true},
+  {"nombre":"Práctica 5 · Pruebas web","enlace":"../practicas/practica-5/practica-5.html","externo":true},
+  {"nombre":"Práctica 6 · XML y JSON","enlace":"../practicas/practica-6/","externo":true},
+  {"nombre":"Práctica 7 · Base de datos","enlace":"../practicas/practica-7/practica-7.html","externo":true},
+  {"nombre":"Práctica 8 · MVC","enlace":"../practicas/practica-8/","externo":true},
+  {"nombre":"Práctica 9 · Servicios web","enlace":"../practicas/practica-9/practica-9.html","externo":true},
+  {"nombre":"Práctica 10 · Spring Framework","enlace":"../practicas/practica-10/Practica_10_Spring_Framework_Miguel_Castillo_Garcia.pdf","externo":true}
+]
